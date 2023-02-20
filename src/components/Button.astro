@@ -3,8 +3,9 @@
 // const cls = Astro.props.cls || 'planeButton'
 
 const {text, cls} = Astro.props
+const buttonClass = 'basicButtonStyle ' + cls
 ---
-<a href="http://" class=`basicButtonStyle ${cls}`>
+<a href="http://" class={buttonClass}  >
 	{text}
 </a>
 
