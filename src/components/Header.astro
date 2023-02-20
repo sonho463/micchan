@@ -1,0 +1,39 @@
+---
+import HeaderLogo from "./HeaderLogo.astro";
+import ButtonWrapper from "./ButtonWrapper.astro";
+import GrobalNav from "./GrobalNav.astro";
+---
+
+<header>
+	<div class="header__inner">
+		<div class="logoWrapepr">
+
+			<HeaderLogo />
+		</div>
+		<div class="header-right">
+			<ButtonWrapper />
+			<GrobalNav />
+		</div>
+	</div>
+</header>
+
+<style>
+  header {
+		background-color: var(--base-color);
+  }
+
+	.header__inner{
+		width: 95%;
+		margin-right: auto;
+		margin-left: auto;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.logoWrapper{
+		width: 30%;
+	}
+
+
+</style>

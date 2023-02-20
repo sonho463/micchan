@@ -1,0 +1,59 @@
+---
+// const text = Astro.props.text || 'button'
+// const cls = Astro.props.cls || 'planeButton'
+
+const {text, cls} = Astro.props
+---
+<a href="http://" class=`basicButtonStyle ${cls}`>
+	{text}
+</a>
+
+<style>
+	*{
+		font-size: 24px;
+		font-family: 'KTEGAKI', sans-serif;
+	}
+
+	.basicButtonStyle{
+		background-color: #fff;
+		color: var(--base-font-color);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 100vh;
+		width: 320px;
+		height: 60px;
+	}
+
+	.basicButtonStyle::before{
+		margin-right: 8px;
+	}
+
+	.forContactForm {
+		background-color: var(--main-color);
+		color: #fff;
+	}
+	.forContactForm::before{
+		content: '';
+		display: block;
+		width: 35px;
+		height: 35px;
+		background-image: url('/src/images/ico-contact-form.svg');
+		background-size: cover;
+		/* background-color: var(--accent-color); */
+	}
+	.forTel {
+		background-color: var(--accent-color);
+		color: #fff;
+	}
+	.forTel::before{
+		content: '';
+		display: block;
+		width: 35px;
+		height: 35px;
+		background-image: url('/src/images/ico-tel.svg');
+		background-size: cover;
+		/* background-color: var(--accent-color); */
+	}
+
+</style>

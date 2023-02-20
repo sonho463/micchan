@@ -1,0 +1,20 @@
+---
+import Button from "./Button.astro";
+---
+
+<div class="buttonContainer">
+	<Button
+	text='フォームで問い合わせ'
+	cls='forContactForm'/>
+	<Button
+	text='お電話で問い合わせ'
+	cls='forTel'/>
+</div>
+
+<style>
+	.buttonContainer{
+		display: flex;
+		gap: 8px;
+	}
+
+</style>

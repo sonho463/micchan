@@ -1,6 +1,18 @@
+@font-face {
+  font-family: 'KTEGAKI';
+  src: url('fonts/KTEGAKI.woff') format('woff'),
+       url('fonts/KTEGAKI.ttf') format('truetype');
+}
+
 :root {
   --container-width: 960px;
   --container-padding: 1rem;
+
+	/* colors */
+	--base-font-color: #333333;
+	--main-color: #C1C153;
+	--base-color: #F4F4A0;
+	--accent-color: #9B1F13;
 }
 
 html,
@@ -8,4 +20,11 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Open Sans", Arial, Helvetica, sans-serif;
+}
+
+a{
+	text-decoration: none;
+}
+a:hover{
+	text-decoration: underline;
 }

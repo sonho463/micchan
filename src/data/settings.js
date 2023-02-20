@@ -1,5 +1,5 @@
 export default {
-  title: `Astro Minimal Starter`,
+  title: `仕出し・弁当・オードブル　みっちゃん`,
   description: `This is an example blog made with Astro.`,
   url: `https://astro-minimal-starter.netlify.app`, // No trailing slash!
   // JSON LD
