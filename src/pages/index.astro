@@ -1,10 +1,16 @@
 ---
 import Layout from "../layouts/Page.astro";
 import Container from "../components/Container.astro";
+import FV from "../components/sections/FV.astro";
+import Intro from "../components/sections/Intro.astro";
+import About from "../components/sections/About.astro";
+import Menu from "../components/sections/Menu.astro";
+import Info from "../components/sections/Info.astro";
+import Access from "../components/sections/Access.astro";
 
 const seo = {
-  title: "Astro Minimal Starter",
-  description: "This is a starter repo for an blog built with Astro including open graph tags, canonical urls, RSS, sitemap support."
+  title: "HOME｜みっちゃん",
+  description: "沖縄県那覇市宇栄原で50年営業している仕出し、弁当、オードブルのお店です。"
   }
 ---
 
@@ -12,10 +18,13 @@ const seo = {
   seo={seo}
 >
   <Container>
-    <h1>みっちゃん</h1>
-    <p>
-     コンテンツ
-    </p>
+		<FV />
+		<Intro />
+		<About />
+		<Menu />
+		<Info />
+		<Access />
+
 
   </Container>
 </Layout>

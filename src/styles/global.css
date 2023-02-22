@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'KTEGAKI';
-  src: url('fonts/KTEGAKI.woff') format('woff'),
-       url('fonts/KTEGAKI.ttf') format('truetype');
+  src: url('/fonts/KTEGAKI.woff') format('woff'),
+       url('/fonts/KTEGAKI.ttf') format('truetype');
 }
 
 :root {
