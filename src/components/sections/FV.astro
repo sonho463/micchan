@@ -1,4 +1,36 @@
 ---
+import FvHeading from "../parts/FvHeading.astro";
+
 
 ---
-<h1>FV</h1>
+<section class="fv">
+	<div class="fv-inner">
+		<div class="fv-text-block js-text-slider">
+			<FvHeading />
+		</div>
+		<div class="image-block js-image-slider">
+			<figure>
+				<img src="src/images/fv/fv01x2.png" alt="">
+			</figure>
+		</div>
+	</div>
+</section>
+
+<style>
+	.fv{
+		background-color: var(--base-color);
+		margin-right: calc(50% - 50vw);
+    margin-left: calc(50% - 50vw);
+		padding-right: calc(50vw - 50%);
+    padding-left: calc(50vw - 50%);
+	}
+	.fv-inner{
+		display: flex;
+	}
+	.image-block{
+		width: 60%;
+	}
+	img{
+		width: 100%;
+	}
+</style>

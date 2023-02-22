@@ -11,7 +11,8 @@
 	/* colors */
 	--base-font-color: #333333;
 	--main-color: #C1C153;
-	--base-color: #F4F4A0;
+	--secondary-color: #F4F4A0;
+	--base-color: #FFFFE0;
 	--accent-color: #9B1F13;
 }
 
@@ -19,7 +20,8 @@ html,
 body {
   margin: 0;
   padding: 0;
-  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+	font-size: 62.5%;
+  font-family: "Open Sans", Arial, Helvetica, sans-seriffont-family;
 }
 
 a{
