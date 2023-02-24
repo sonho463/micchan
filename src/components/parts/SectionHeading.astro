@@ -1,0 +1,39 @@
+---
+const {text} = Astro.props
+
+---
+
+<div class="section-heading">
+	<h2>
+		<span>
+			{text}
+		</span>
+	</h2>
+</div>
+
+
+<style>
+h2{
+	width: fit-content;
+	margin-right: auto;
+	margin-left: auto;
+	font-size: 4.2rem;
+	font-family: var(--font-design-main);
+	position: relative;
+}
+span{
+	position: relative;
+	z-index: 2
+}
+h2::before{
+		content: '';
+		position: absolute;
+		transform: translate(-50%,-10%);
+		display: block;
+		background-image: url(../../images/heading-mark--pink.svg);
+		background-size: contain;
+		width: 80px;
+		height: 60px;
+		z-index: 1;
+	}
+</style>

@@ -1,4 +1,50 @@
 ---
+import introImage from '../../images/micchan.png'
 
 ---
-<h1>Intro</h1>
+
+<section class="intro">
+	<div class="intro__inner">
+		<figure class="intro__image">
+			<img src={introImage} alt="みっちゃん">
+		</figure>
+		<div class="intro__text">
+			<p>
+				仕出し・お弁当・オードブルのみっちゃんです。<br>
+				那覇市宇栄原で５０年<br>
+				地元のみなさんに支えられてきました。
+			</p>
+			<p>
+				ばあちゃんたちが厨房でがんばっています。<br>
+				伝統的な沖縄の味を<br>
+				多くの人にお届けできるように<br>
+				これからもがんばってまいります。
+			</p>
+		</div>
+
+	</div>
+</section>
+
+
+<style>
+	img{
+		width: 100%;;
+	}
+	.intro__inner{
+		display: flex;
+		align-items: center;
+	}
+	.intro__inner * {
+		flex: 1;
+	}
+	.intro__text{
+		font-size: 2rem;;
+		line-height: 2;
+	}
+	p{
+		margin-top: 32px;
+	}
+
+
+
+</style>

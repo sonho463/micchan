@@ -1,32 +1,41 @@
 @font-face {
-  font-family: 'KTEGAKI';
-  src: url('/fonts/KTEGAKI.woff') format('woff'),
-       url('/fonts/KTEGAKI.ttf') format('truetype');
+  font-family: "KTEGAKI";
+  src: url("/fonts/KTEGAKI.woff") format("woff"),
+    url("/fonts/KTEGAKI.ttf") format("truetype");
 }
 
 :root {
   --container-width: 960px;
   --container-padding: 1rem;
 
-	/* colors */
-	--base-font-color: #333333;
-	--main-color: #C1C153;
-	--secondary-color: #F4F4A0;
-	--base-color: #FFFFE0;
-	--accent-color: #9B1F13;
+  /* colors */
+  --base-font-color: #333333;
+  --main-color: #c1c153;
+  --secondary-color: #f4f4a0;
+  --base-color: #ffffe0;
+  --accent-color: #9b1f13;
+	--accent-pale-color: #FFD1CC;
+
+  /* font */
+	--font-design-main: 'KTEGAKI', serif;
 }
 
 html,
 body {
   margin: 0;
   padding: 0;
-	font-size: 62.5%;
+  font-size: 62.5%;
   font-family: "Open Sans", Arial, Helvetica, sans-seriffont-family;
 }
 
-a{
-	text-decoration: none;
+a {
+  text-decoration: none;
 }
-a:hover{
-	text-decoration: underline;
+a:hover {
+  text-decoration: underline;
+}
+
+section {
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
