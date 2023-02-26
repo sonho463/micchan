@@ -1,8 +1,8 @@
 ---
 import settings from "../data/settings.js";
 
-// import '/src/styles/destyle.css';
-import '/src/styles/global.css';
+// import 'styles/destyle.css';
+// import 'styles/global.css';
 
 export interface Props {
 	title?: string;
@@ -25,6 +25,8 @@ const image = new URL(Astro.props.image || './social.png', Astro.site);
 <title>{title || settings.title}</title>
 <meta name="title" content={title || settings.title} />
 <meta name="description" content={description || settings.description} />
+<link rel="stylesheet" href="/styles/destyle.css.css">
+<link rel="stylesheet" href="/styles/global.css.css">
 <!-- settingsmap -->
 <link rel="settingsmap" href="/settingsmap.xml">
 <!-- RSS -->
