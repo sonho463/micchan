@@ -1,7 +1,8 @@
 ---
+const {className} = Astro.props;
 ---
 
-<ul>
+<ul class={className}>
   <li>
     <a href=""> トップ </a>
   </li>
@@ -25,4 +26,11 @@
     justify-content: space-between;
 		font-size: 1.6rem;
   }
+
+	.footer{
+		justify-content: flex-start;
+		gap: 20px;
+	}
+
+
 </style>

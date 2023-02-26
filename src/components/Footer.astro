@@ -1,15 +1,69 @@
 ---
-
+import GrobalNav from "./GrobalNav.astro";
+import HeaderLogo from "./HeaderLogo.astro";
 ---
+
 <footer>
-	<h1>フッター</h1>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <HeaderLogo />
+      <div class="footer-logo-text">
+        <span>
+          〒901-0153<br />
+          沖縄県那覇市宇栄原１丁目１６−１０<br />
+          TEL　098-857-7606<br />
+          FAX　098-858-2194
+        </span>
+      </div>
+    </div>
+    <nav class="footer-nav">
+      <GrobalNav className="footer" />
+    </nav>
+    <p class="footer-copyright">© 2023 みっちゃん</p>
+  </div>
 </footer>
 
 <style>
-	footer{
-		width: 95%;
-		margin-right: auto;
-		margin-left: auto;
-	}
+  footer {
+    width: 100%;
+    background-color: var(--base-color);
+  }
 
+  .footer-inner {
+    width: 95%;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 40px 0;
+    display: grid;
+    grid-template-areas:
+      "logo nav"
+      "logo copyright";
+    grid-template-rows: 100px 1fr;
+    grid-template-columns: 400px 1fr;
+  }
+  .footer-logo {
+    grid-area: logo;
+  }
+  .footer-nav {
+    grid-area: nav;
+		margin-top: auto;
+		margin-bottom: auto;
+  }
+  .footer-copyright {
+    grid-area: copyright;
+  }
+
+  .footer-logo {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.6rem;
+    line-height: 1.4;
+  }
+  .footer-copyright {
+    margin-left: auto;
+    margin-top: auto;
+    font-size: 1.4rem;
+  }
 </style>

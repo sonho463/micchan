@@ -20,6 +20,11 @@
 	--font-design-main: 'KTEGAKI', serif;
 }
 
+*{
+	box-sizing: border-box;
+	/* outline: auto; */
+}
+
 html,
 body {
   margin: 0;
@@ -32,7 +37,7 @@ a {
   text-decoration: none;
 }
 a:hover {
-  text-decoration: underline;
+  opacity: 0.6;
 }
 
 section {
