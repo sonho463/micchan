@@ -1,5 +1,6 @@
 ---
 import Background from "../parts/Background.astro";
+import Outview from "../../images/outview.jpg"
 const headingText = 'お店へのアクセス'
 
 ---
@@ -9,6 +10,40 @@ bgType="toLight"
 headingText = {headingText}
 >
 
+<div class="access__inner">
+	<figure>
+		<img src={Outview} alt="">
+		<figcaption>
+			那覇空港から車で約５分
+		</figcaption>
+	</figure>
+	<div class="map">
+		<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14320.459935710669!2d127.6631481!3d26.1929376!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb1e0e2f553e9781d!2z44G_44Gj44Gh44KD44KT5byB5b2T!5e0!3m2!1sja!2sjp!4v1677388901397!5m2!1sja!2sjp" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+	</div>
+
+</div>
 
 
 </Background>
+
+
+<style>
+	.access__inner{
+		display: flex;
+		gap: 5%;
+	}
+	figure{
+		width: 40%;
+	}
+	figcaption{
+		font-size: 2rem;
+	}
+	.map{
+		flex: 1;
+		width: 60%;
+	}
+	iframe{
+		width: 100%;
+		height: 100%;
+	}
+</style>
