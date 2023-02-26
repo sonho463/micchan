@@ -1,22 +1,72 @@
 ---
 import Background from "../parts/Background.astro";
+import SectionHeading02 from "../parts/SectionHeading02.astro";
 import SectionLead from "../parts/SectionLead.astro";
 const headingText = "メニューのご紹介";
+import bannerFolded from "../../images/menu/banner-folded.png";
+import bannerMeeting from "../../images/menu/banner-meeting.png";
+import MenuUsual from "../MenuUsual.astro";
+import Button from "../Button.astro";
+import ButtonWrapper from "../ButtonWrapper.astro";
 ---
 
-<Background name="about" bgType="toDark" headingText={headingText}>
+<Background
+name="about"
+bgType="toDark"
+headingText={headingText}
+>
   <SectionLead>
     <p>
-      ばあちゃんたちが作る<br>
-			昔ながらの沖縄定番料理<br>
-			会議のときのお昼ごはんに<br>
-      トゥシビー、結納などのお祝いに<br>
-			メニューなどもぜひご相談ください。
+      ばあちゃんたちが作る<br />
+      昔ながらの沖縄定番料理<br />
+      会議のときのお昼ごはんに<br />
+      トゥシビー、結納などのお祝いに<br />
+      メニューなどもぜひご相談ください。
     </p>
   </SectionLead>
+
+  <div class="menu-article">
+
+    <SectionHeading02 headingText="折り詰めやオードブル" />
+
+    <ul class="menu-folded">
+      <li>
+        <figure>
+          <img src={bannerFolded} alt="折り詰めやオードブル" />
+        </figure>
+      </li>
+      <li>
+        <figure>
+          <img src={bannerMeeting} alt="" />
+        </figure>
+      </li>
+    </ul>
+		<ButtonWrapper className="buttonContainerSection" />
+
+		<SectionHeading02 headingText="いつものお弁当" />
+		<MenuUsual />
+		<ButtonWrapper className="buttonContainerSection" />
+
+  </div>
+
 
 </Background>
 
 <style>
+
+	.menu-article{
+		width: 100%;
+	}
+
+	.menu-folded{
+		width: 100%;
+		display: flex;
+		gap: 5%;
+	}
+	.folded-article li{
+		flex: 1;
+	}
+
+
 
 </style>

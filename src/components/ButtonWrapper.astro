@@ -1,8 +1,9 @@
 ---
 import Button from "./Button.astro";
+const {className} = Astro.props;
 ---
 
-<div class="buttonContainer">
+<div class={className}>
 	<Button
 	text='フォームで問い合わせ'
 	cls='forContactForm'/>
@@ -12,12 +13,20 @@ import Button from "./Button.astro";
 </div>
 
 <style>
-	.buttonContainer{
+	.buttonContainerHeader{
 		width: 90%;
 		display: flex;
 		margin-left: auto;
 		gap: 8px;
 		margin-bottom: 12px;
+	}
+
+	.buttonContainerSection{
+		margin-top: 42px;
+		gap: 8px;
+		width: 100%;
+		display: flex;
+		justify-content: flex-end;
 	}
 
 </style>

@@ -1,0 +1,43 @@
+---
+import menuUsual from "../data/menuUsual";
+import ButtonWrapper from "./ButtonWrapper.astro";
+
+// menuUsual.forEach((el)=>{
+// 	console.log(el)
+// })
+
+---
+
+
+
+<ul class="menu-usual">
+	{
+		menuUsual.map((item)=>(
+		<li>
+			<figure>
+				<img src={`src/images/menu/menuUsual/${item.path}.png`} alt="" />
+				<figcaption>{item.name}</figcaption>
+			</figure>
+		</li>
+		))
+	}
+</ul>
+
+
+<style>
+ul{
+	display: flex;
+	flex-wrap: wrap;
+}
+li{
+
+	width: 20%;
+}
+figcaption{
+	width: 80%;
+	font-size: 14px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+</style>

@@ -1,0 +1,83 @@
+---
+const allinfos = await Astro.glob('../pages/info/*.md');
+allinfos.forEach((el)=>{
+	console.log(el.Content)
+})
+allinfos.sort();
+allinfos.forEach((el)=>{
+	console.log(el.Content)
+})
+
+---
+
+<ul>
+	{allinfos.map((info)=>(
+		<li>
+			<a href={info.url}>
+				<div class="text-block">
+					<h2>
+						<span>
+							{info.frontmatter.title}
+						</span>
+					</h2>
+					<p>
+						{info.frontmatter.description}
+						</p>
+				</div>
+				<figure>
+					<img src={info.frontmatter.image} alt={info.frontmatter.alt}>
+				</figure>
+				</a>
+		</li>
+	))}
+</ul>
+
+
+<style>
+li{
+	display: flex;
+	padding: 36px 8%;
+	border-top: 1px solid #333;
+}
+
+a {
+	display: flex;
+}
+
+li:last-of-type{
+	border-bottom: 1px solid #333;
+}
+.text-block {
+	width: 70%;
+}
+h2{
+	width: fit-content;
+	margin-right: auto;
+	font-size: 3.2rem;
+	font-family: var(--font-design-main);
+	position: relative;
+}
+span{
+	position: relative;
+	z-index: 2
+}
+h2::before{
+		content: '';
+		position: absolute;
+		transform: translate(-50%,-20%);
+		display: block;
+		background-image: url(../images/heading-mark.svg);
+		background-size: contain;
+		width: 80px;
+		height: 60px;
+		z-index: 1;
+	}
+p{
+	margin-top: 36px;
+	font-size: 20px;
+}
+figure{
+	width: 30%;
+}
+
+</style>
