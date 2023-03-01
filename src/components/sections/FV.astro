@@ -1,38 +1,56 @@
 ---
 import FvHeading from "../parts/FvHeading.astro";
 import FvImage from "../../images/fv/fv01x2.png";
-
-
+import FvImage02 from "../../images/fv/fv2.png";
 ---
+
 <section class="fv">
-	<div class="fv-inner">
-		<div class="fv-text-block js-text-slider">
-			<FvHeading />
-		</div>
-		<div class="image-block js-image-slider">
-			<figure>
-				<img src={FvImage} alt="">
-			</figure>
-		</div>
-	</div>
+  <div class="fv-inner">
+    <div class="fv-text-block js-text-slider">
+      <FvHeading />
+    </div>
+    <div class="swiper image-block js-image-slider">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <figure>
+            <img src={FvImage} alt="" />
+          </figure>
+        </div>
+        <div class="swiper-slide">
+          <figure>
+            <img src={FvImage02} alt="" />
+          </figure>
+        </div>
+        <div class="swiper-slide">
+          <figure>
+            <img src={FvImage} alt="" />
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <style>
-	.fv{
-		background-color: var(--base-color);
-		margin-right: calc(50% - 50vw);
+  .fv {
+    background-color: var(--base-color);
+    margin-right: calc(50% - 50vw);
     margin-left: calc(50% - 50vw);
-		padding-right: calc(50vw - 50%);
+    padding-right: calc(50vw - 50%);
     padding-left: calc(50vw - 50%);
+  }
+  .fv-inner {
+    display: flex;
+    justify-content: space-between;
+  }
+	.fv-text-block{
+		width: 50%;
+		overflow-x: hidden;
 	}
-	.fv-inner{
-		display: flex;
-		justify-content: space-between;
-	}
-	.image-block{
-		width: 60%;
-	}
-	img{
-		width: 100%;
-	}
+  .image-block {
+    width: 60%;
+  }
+  img {
+    width: 100%;
+  }
 </style>

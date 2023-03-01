@@ -1,49 +1,87 @@
 ---
 ---
-<div class="text-layout">
-	<h1>
-		<span>創業50年</span>
-		<span>宇栄原の仕出し屋</span>
-	</h1>
-	<p>地元では<br>
-		けっこう有名な<br>
-		ばあちゃんが<br>
-		創業しました。</p>
+<div class="swiper-wrapper">
+	<div class="swiper-slide">
+		<div class="text-layout">
+			<h1>
+				<span>創業50年</span>
+				<span>宇栄原の仕出し屋</span>
+			</h1>
+			<p>
+				地元では<br />
+				けっこう有名な<br />
+				ばあちゃんが<br />
+				創業しました。
+			</p>
+		</div>
+	</div>
+	<div class="swiper-slide">
+		<div class="text-layout">
+			<h1>
+				<span>ばあちゃんたちが</span>
+				<span>がんばるお店</span>
+			</h1>
+			<p>
+				ばあちゃんたちが<br />
+				伝統的な<br />
+				沖縄料理を<br />
+				提供します。
+			</p>
+		</div>
+	</div>
+	<div class="swiper-slide">
+		<div class="text-layout">
+			<h1>
+				<span>創業30年</span>
+				<span>宇栄原の仕出し屋</span>
+			</h1>
+			<p>
+				地元では<br />
+				けっこう有名な<br />
+				ばあちゃんが<br />
+				創業しました。
+			</p>
+		</div>
+	</div>
+
 </div>
 
 <style>
-	.text-layout{
-		height: 100%;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		position: relative;
-	}
-	h1{
-		position: relative;
-	}
-	h1 span{
+  .text-layout {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+		background-color: var(--base-color);
+  }
+  h1 {
+    position: relative;
+		transform: translateX(32px);
+  }
+  h1 span {
 		font-family: var(--font-design-main);
-		font-size: 4rem;
-	}
-	h1::before{
-		content: '';
-		position: absolute;
-		transform: translate(-30%,-30%);
+    font-size: 4rem;
+  }
+  h1::before {
+		content: "";
+    position: absolute;
+    transform: translate(-30%, -30%);
+    display: block;
+    background-image: url(../../images/heading-mark.svg);
+    background-size: contain;
+    width: 120px;
+    height: 90px;
+  }
+  span {
 		display: block;
-		background-image: url(../../images/heading-mark.svg);
-		background-size: contain;
-		width: 120px;
-		height: 90px;
-	}
-	span{
-		display: block;
-		position: relative;
-		z-index: 1;
-	}
-	p{
+    position: relative;
+    z-index: 1;
+  }
+  p {
 		margin-top: 40px;
-		font-size: 2rem;
-		line-height: 2;
-	}
+		transform: translateX(32px);
+    font-size: 2rem;
+    line-height: 2;
+  }
 </style>
