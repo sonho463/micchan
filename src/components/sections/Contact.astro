@@ -1,0 +1,51 @@
+---
+import Background from "../parts/Background.astro";
+const headingText = 'お問い合わせ'
+---
+<Background
+name="contact"
+bgType="solidWhite"
+headingText = {headingText}
+>
+
+<form action="https://ssgform.com/s/KvYQQu800pR9" method="post">
+  <div style="display: none;">
+    <input type="text" name="wana" />
+  </div><!-- name="wana"を見えない状態で設置 -->
+	<div class="form-block">
+		<label for="name">
+			お名前
+			<input id="name" type="text" name="お名前" required="required" />
+		</label>
+		<label for="email">
+			メールアドレス
+			<input id="email" type="email" name="メールアドレス" required="required" />
+		</label>
+		<label for="content">
+			お問い合わせ内容
+			<textarea id="content" name="お問い合わせ内容" required="required"></textarea>
+		</label>
+		<button type="submit">送信する</button>
+	</div>
+</form>
+
+</Background>
+
+
+<style>
+	.form-block{
+		display: flex;
+		flex-direction: column;
+	}
+	label{
+		font-size: 20px;
+	}
+  input,
+  textarea {
+		display: block;
+    border: 1px solid #333;
+    font-size: 2rem;
+  }
+
+
+</style>

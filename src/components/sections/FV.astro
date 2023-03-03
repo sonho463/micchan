@@ -2,6 +2,7 @@
 import FvHeading from "../parts/FvHeading.astro";
 import FvImage from "../../images/fv/fv01x2.png";
 import FvImage02 from "../../images/fv/fv2.png";
+import FvImage03 from "../../images/fv/fv3.png";
 ---
 
 <section class="fv">
@@ -23,7 +24,7 @@ import FvImage02 from "../../images/fv/fv2.png";
         </div>
         <div class="swiper-slide">
           <figure>
-            <img src={FvImage} alt="" />
+            <img src={FvImage03} alt="" />
           </figure>
         </div>
       </div>
@@ -50,6 +51,9 @@ import FvImage02 from "../../images/fv/fv2.png";
   .image-block {
     width: 60%;
   }
+	figure{
+		background-color: var(--base-color);
+	}
   img {
     width: 100%;
   }

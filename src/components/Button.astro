@@ -2,10 +2,10 @@
 // const text = Astro.props.text || 'button'
 // const cls = Astro.props.cls || 'planeButton'
 
-const {text, cls} = Astro.props
+const {text, cls, path} = Astro.props
 const buttonClass = 'basicButtonStyle ' + cls
 ---
-<a href="http://" class={buttonClass}  >
+<a href={path} class={buttonClass}  >
 	{text}
 </a>
 
