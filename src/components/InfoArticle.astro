@@ -1,31 +1,40 @@
 ---
-const allinfos = await Astro.glob('../pages/info/*.md');
-allinfos.forEach((el)=>{
-	console.log(el.Content)
-})
+import { getBlogs } from "../library/microcms";
+const response = await getBlogs({ fields: ["id", "title","content","image"],limit: 3 });
+
+// const allinfos = await Astro.glob('../pages/info/*.md');
+// allinfos.forEach((el)=>{
+// 	console.log(el.Content)
+// })
+
 
 ---
 
 <ul>
-	{allinfos.map((info)=>(
+
+	{response.contents.map((info)=>{
+		const contentText = info.content.replace(/(<([^>]+)>)/gi, '');
+		const linkText = 'info/' + info.id;
+		return (
 		<li>
-			<a href={info.url}>
+			<a href={linkText}>
 				<div class="text-block">
 					<h2>
 						<span>
-							{info.frontmatter.title}
+							{info.title}
 						</span>
 					</h2>
 					<p>
-						{info.frontmatter.description}
+						{contentText}
 						</p>
 				</div>
 				<figure>
-					<img src={info.frontmatter.image} alt={info.frontmatter.alt}>
+					<img src={info.image.url} alt="">
 				</figure>
+
 				</a>
 		</li>
-	))}
+	)})}
 </ul>
 
 
@@ -46,10 +55,24 @@ li:last-of-type{
 .text-block {
 	width: 70%;
 }
+
 h2{
 	width: fit-content;
 	margin-right: auto;
 	position: relative;
+}
+p{
+	height: 100px;
+	line-height: 1.8;
+	margin-top: 36px;
+	padding-right: 24px;
+	font-size: 20px;
+	/* 三点リーダー対応 */
+	display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+
+  overflow: hidden;
 }
 span{
 	font-size: 3.2rem;
@@ -69,8 +92,7 @@ h2::before{
 		z-index: 1;
 	}
 .text-block p{
-	margin-top: 36px;
-	font-size: 20px;
+
 }
 figure{
 	width: 30%;

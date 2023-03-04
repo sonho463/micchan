@@ -9,24 +9,24 @@ import Info from "../components/sections/Info.astro";
 import Access from "../components/sections/Access.astro";
 import Contact from "../components/sections/Contact.astro";
 
+import { getBlogs } from "../library/microcms";
+const response = await getBlogs({ fields: ["id", "title"] });
 
 const seo = {
   title: "HOME｜みっちゃん",
-  description: "沖縄県那覇市宇栄原で50年営業している仕出し、弁当、オードブルのお店です。"
-  }
+  description:
+    "沖縄県那覇市宇栄原で50年営業している仕出し、弁当、オードブルのお店です。",
+};
 ---
 
-<Layout
-  seo={seo}
->
+<Layout {seo}>
   <Container>
-		<FV />
-		<Intro />
-		<About />
-		<Menu />
-		<Info />
-		<Access />
-		<Contact />
-
+    <FV />
+    <Intro />
+    <About />
+    <Menu />
+    <Info />
+    <Access />
+    <Contact />
   </Container>
 </Layout>
