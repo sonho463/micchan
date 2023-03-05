@@ -4,28 +4,32 @@ const {className} = Astro.props;
 
 <ul class={className}>
   <li>
-    <a href="#"> トップ </a>
+    <a href="/#"> トップ </a>
   </li>
   <li>
-    <a href="#about"> みっちゃんについて </a>
+    <a href="/#about"> みっちゃんについて </a>
   </li>
   <li>
-    <a href="#menu"> メニューのご紹介 </a>
+    <a href="/#menu"> メニューのご紹介 </a>
   </li>
   <li>
-    <a href="#info"> お知らせ </a>
+    <a href="/#info"> お知らせ </a>
   </li>
   <li>
-    <a href="#access"> アクセス </a>
+    <a href="/#access"> アクセス </a>
   </li>
 </ul>
 
 <style>
   ul {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
 		font-size: 1.6rem;
+		font-size: clamp(1.2rem,1.6vw,2rem);
   }
+	li+li{
+		margin-left: 5%;
+	}
 
 	.footer{
 		justify-content: flex-start;

@@ -1,11 +1,93 @@
 ---
+import Layout from "../layouts/Page.astro";
+import ImgMaster from "../images/master.png";
+import Container from "../components/Container.astro";
 
+const seo = {
+  title: "店主のごあいさつ｜みっちゃん",
+  description:
+    "沖縄県那覇市宇栄原で50年営業している仕出し、弁当、オードブルのお店です。",
+};
 ---
 
-<h1>アバウトページ</h1>
+<Layout {seo}>
+  <Container>
+    <div class="content">
+      <figure>
+        <img src={ImgMaster} alt="" />
+      </figure>
+      <h1>
+        <span> 店主のごあいさつ </span>
+      </h1>
+      <div class="text-block">
+        <p>
+          私が中学の頃から、家業の手伝いをさせられていたのを良く憶えてます。
+        </p>
+        <p>今年で６２歳なので、もうすぐ５０年ですね 早いものです。</p>
+        <p>
+          母親は私に跡を継いで欲しかったようですが、当時、まだ１０代の私には、
+          広い世界を旅していろんなことにチャレンジしたいとの夢があったので,
+          実家から逃げるように上京しました。
+        </p>
+				<p>
+          以降、兄が店を継ぐことになりました。
+        </p>
+				<p>
+          食堂を始める前にもいろんな商売をやってたので、
+          借金がだいぶあったようでだいぶ苦労したようです。
+        </p>
+        <p>
+					あれから約５０年、よく続いたものです。
+					今では地元で知らない人はいないくらい有名店となりました。
+        </p>
+        <p>
+          知らない人に良く『いゃーみっちゃんくゎぁやらや』と声かけられます。
+          『みっちゃんの子供でしょ』という意味です。
+          遺伝子が強いのか似てると言われます。
+        </p>
+        <p>
+          昨年、親父も亡くなり、
+          兄も高齢なので、
+          店を閉めるという話しになりましたが、
+          ここまで頑張って来たのに閉めるのはもったいないという思いと、
+          母が生きてる間はみっちゃんの看板はなんとしても残したい、
+          それが最後の親孝行になるのではとの思いで、
+          店を引き継ぐことにしました。
+        </p>
+        <p>
+          これからも古き良き沖縄の伝統を引き継ぎ、
+          私が幼かった頃の沖縄の味を絶やさないよう残していきたいと思います。
+        </p>
+      </div>
+    </div>
+  </Container>
+</Layout>
 
 <style>
-	h1{
-		font-size: 4.2rem;
-	}
+  .content {
+    padding-top: 4rem;
+  }
+  figure {
+    width: 200px;
+    border-radius: 100vh;
+    overflow: hidden;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  h1 {
+    margin-top: 3rem;
+    font-size: 4.2rem;
+    text-align: center;
+  }
+  .text-block {
+    width: 70%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  p {
+    font-size: 2.4rem;
+    line-height: 1.6;
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
 </style>

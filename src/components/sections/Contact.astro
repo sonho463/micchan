@@ -13,18 +13,24 @@ headingText = {headingText}
     <input type="text" name="wana" />
   </div><!-- name="wana"を見えない状態で設置 -->
 	<div class="form-block">
-		<label for="name">
-			お名前
+		<div class="item-wrapper">
+			<label for="name">
+				お名前
+			</label>
 			<input id="name" type="text" name="お名前" required="required" />
-		</label>
-		<label for="email">
-			メールアドレス
+		</div>
+		<div class="item-wrapper">
+			<label for="email">
+				メールアドレス
+			</label>
 			<input id="email" type="email" name="メールアドレス" required="required" />
-		</label>
-		<label for="content">
-			お問い合わせ内容
-			<textarea id="content" name="お問い合わせ内容" required="required"></textarea>
-		</label>
+		</div>
+		<div class="item-wrapper --textarea">
+			<label for="content">
+				お問い合わせ内容
+			</label>
+			<textarea id="content" name="お問い合わせ内容" required="required" rows="5"></textarea>
+		</div>
 		<button type="submit">送信する</button>
 	</div>
 </form>
@@ -36,16 +42,47 @@ headingText = {headingText}
 	.form-block{
 		display: flex;
 		flex-direction: column;
+		align-items: center;
+	}
+	.item-wrapper{
+		display: flex;
+		align-items: center;
+		gap: 20px;
+	}
+	.item-wrapper.--textarea{
+		align-items: flex-start;
+	}
+	.item-wrapper + div{
+		margin-top: 40px;
 	}
 	label{
 		font-size: 20px;
+		width: 200px;
+		text-align: right;
 	}
   input,
   textarea {
 		display: block;
     border: 1px solid #333;
+		border-radius: 5px;;
     font-size: 2rem;
+		padding: .5em .5em;
+		width: 400px;
   }
+
+
+	button{
+		margin-top: 40px;
+		font-size: 2.0rem;
+		padding: .5em 3em;
+		background-color: var(--main-color);
+		color: #fff;
+
+	}
+
+	button:hover{
+		opacity: .6;
+	}
 
 
 </style>

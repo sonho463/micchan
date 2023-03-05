@@ -10,13 +10,15 @@ const {className} = Astro.props;
 	path='#contact'/>
 	<Button
 	text='お電話で問い合わせ'
-	cls='forTel'/>
+	cls='forTel'
+	path='tel:098-857-7606' />
 </div>
 
 <style>
 	.buttonContainerHeader{
 		width: 90%;
 		display: flex;
+		justify-content: flex-end;
 		margin-left: auto;
 		gap: 8px;
 		margin-bottom: 12px;
