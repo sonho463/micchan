@@ -1,0 +1,39 @@
+---
+import lunchBox from '../images/lunchBox.png';
+---
+<div class="hamburger">
+	<span>
+		<img src={lunchBox} alt="">
+	</span>
+	<span></span>
+	<span></span>
+</div>
+
+<style>
+
+.hamburger{
+	width: 36px;
+	height: 36px;
+}
+
+span{
+	display: block;
+}
+
+span:first-of-type{
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+span:not(:first-of-type){
+	width: 100%;
+	margin-top: 3px;;
+	height: 2px;
+	background-color: #666;
+}
+
+.hamburger.open span{
+	
+}
+</style>

@@ -48,6 +48,7 @@ headingText = {headingText}
 		display: flex;
 		align-items: center;
 		gap: 20px;
+		width: 100%;
 	}
 	.item-wrapper.--textarea{
 		align-items: flex-start;
@@ -58,6 +59,7 @@ headingText = {headingText}
 	label{
 		font-size: 20px;
 		width: 200px;
+		width: 30%;
 		text-align: right;
 	}
   input,
@@ -68,6 +70,7 @@ headingText = {headingText}
     font-size: 2rem;
 		padding: .5em .5em;
 		width: 400px;
+		width: 60%;
   }
 
 
@@ -84,5 +87,16 @@ headingText = {headingText}
 		opacity: .6;
 	}
 
+	@media screen and (max-width: 768px) {
+		.item-wrapper{
+			flex-direction: column;
+		}
+		label,input,textarea{
+			width: 100%;
+		}
+		label{
+			text-align: left;
+		}
+}
 
 </style>

@@ -2,6 +2,7 @@
 import HeaderLogo from "./HeaderLogo.astro";
 import ButtonWrapper from "./ButtonWrapper.astro";
 import GrobalNav from "./GrobalNav.astro";
+import Hamburger from "./Hamburger.astro";
 ---
 
 <header>
@@ -13,8 +14,9 @@ import GrobalNav from "./GrobalNav.astro";
 		<div class="header-right">
 			<ButtonWrapper
 			className="buttonContainerHeader" />
-			<GrobalNav />
+			<GrobalNav className="header" />
 		</div>
+		<Hamburger />
 	</div>
 </header>
 
@@ -38,6 +40,15 @@ import GrobalNav from "./GrobalNav.astro";
 	.header-right{
 		width: 60%;
 	}
+
+	@media screen and (max-width: 768px) {
+		.logoWrapper{
+			width: 45%;
+		}
+.header-right{
+	display: none;
+}
+								}
 
 
 </style>

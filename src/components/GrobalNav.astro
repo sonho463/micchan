@@ -31,10 +31,23 @@ const {className} = Astro.props;
 		margin-left: 5%;
 	}
 
+
 	.footer{
 		justify-content: flex-start;
 		gap: 20px;
+		margin-left: 42px;
 	}
+	@media screen and (max-width: 768px) {
+		.footer{
+			flex-direction: column;
+			align-items: center;
+			font-size: 2rem;
+			margin-left: 0;
+		}
+		.footer li{
+			margin-left: 0;
+		}
+								}
 
 
 </style>

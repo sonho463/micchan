@@ -41,6 +41,19 @@ import HeaderLogo from "./HeaderLogo.astro";
     grid-template-rows: 100px 1fr;
     grid-template-columns: 400px 1fr;
   }
+
+	@media screen and (max-width: 768px) {
+		.footer-inner{
+			grid-template-areas:
+			"logo"
+			"nav"
+			"copyright"
+			;
+			grid-template-rows: 1fr 1fr 20px;
+			grid-template-columns: 100%;
+		}
+	}
+
   .footer-logo {
     grid-area: logo;
   }

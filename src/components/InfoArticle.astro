@@ -11,7 +11,6 @@ const response = await getBlogs({ fields: ["id", "title","content","image"],limi
 ---
 
 <ul>
-
 	{response.contents.map((info)=>{
 		const contentText = info.content.replace(/(<([^>]+)>)/gi, '');
 		const linkText = 'info/' + info.id;
@@ -34,12 +33,13 @@ const response = await getBlogs({ fields: ["id", "title","content","image"],limi
 
 				</a>
 		</li>
-	)})}
+	)
+})}
+
 </ul>
 
-
 <style>
-li{
+	li{
 	display: flex;
 	padding: 36px 8%;
 	border-top: 1px solid #333;
@@ -48,6 +48,8 @@ li{
 a {
 	display: flex;
 }
+
+
 
 li:last-of-type{
 	border-bottom: 1px solid #333;
@@ -91,11 +93,31 @@ h2::before{
 		height: 60px;
 		z-index: 1;
 	}
-.text-block p{
 
-}
 figure{
 	width: 30%;
 }
 
-</style>
+@media screen and (max-width: 768px) {
+	li{
+		padding: 40px 0 20px;
+	}
+ a{
+	flex-direction: column-reverse;
+ }
+ figure{
+	width: 100%;
+ }
+ .text-block{
+	margin-top: 32px;
+	width: 100%;
+ }
+ p{
+	padding-right: 0;
+	margin-top: 8px;
+	font-size: 1.8rem;
+	line-height: 1.4;
+	height: 72px;
+ }
+}
+	</style>
