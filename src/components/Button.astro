@@ -2,86 +2,100 @@
 // const text = Astro.props.text || 'button'
 // const cls = Astro.props.cls || 'planeButton'
 
-const {text, cls, path} = Astro.props
-const buttonClass = 'basicButtonStyle ' + cls
+const { text, cls, path } = Astro.props;
+const buttonClass = "basicButtonStyle " + cls;
 ---
-<a href={path} class={buttonClass}  >
-	{text}
+
+<a href={path} class={buttonClass}>
+  {text}
 </a>
 
 <style>
-	*{
-		font-size: clamp(18px,2vw,24px);
-		font-family: 'KTEGAKI', sans-serif;
-	}
+  * {
+    font-size: clamp(18px, 2vw, 24px);
+    font-family: "KTEGAKI", sans-serif;
+  }
 
-	.basicButtonStyle{
-		background-color: #fff;
-		color: var(--base-font-color);
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		border-radius: 100vh;
-		max-width: 320px;
-		width: 45%;
-		height: 60px;
-	}
+  .basicButtonStyle {
+    background-color: #fff;
+    color: var(--base-font-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100vh;
+    max-width: 320px;
+    width: 45%;
+    height: 60px;
+  }
+	@media screen and (max-width: 768px) {
+		.basicButtonStyle{
+			width: 100%;
+		}
+}
 
-	.basicButtonStyle::before{
-		margin-right: 8px;
-	}
+  .basicButtonStyle::before {
+    margin-right: 8px;
+  }
 
-	.forContactForm {
-		background-color: var(--main-color);
-		color: #fff;
-	}
-	.forContactForm::before{
-		content: '';
-		display: block;
-		width: 3vw;
-		height: 3vw;
-		max-width: 35px;
-		max-height: 35px;
-		min-width:20px;
-		min-height:20px;
-		background-image: url('../images/ico-contact-form.svg');
-		background-size: cover;
-		/* background-color: var(--accent-color); */
-	}
-	.forTel {
-		background-color: var(--accent-color);
-		color: #fff;
-		cursor: pointer;
-	}
-	.forTel::before{
-		content: '';
-		display: block;
-		width: 3vw;
-		height: 3vw;
-		max-width: 35px;
-		max-height: 35px;
-		min-width:20px;
-		min-height:20px;
-		background-image: url('../images/ico-tel.svg');
-		background-size: cover;
-		/* background-color: var(--accent-color); */
-	}
+  .forContactForm {
+    background-color: var(--main-color);
+    color: #fff;
+  }
+  .forContactForm::before {
+    content: "";
+    display: block;
+    width: 3vw;
+    height: 3vw;
+    max-width: 35px;
+    max-height: 35px;
+    min-width: 20px;
+    min-height: 20px;
+    background-image: url("../images/ico-contact-form.svg");
+    background-size: cover;
+    /* background-color: var(--accent-color); */
+  }
+  .forTel {
+    background-color: var(--accent-color);
+    color: #fff;
+    cursor: pointer;
+  }
+  .forTel::before {
+    content: "";
+    display: block;
+    width: 3vw;
+    height: 3vw;
+    max-width: 35px;
+    max-height: 35px;
+    min-width: 20px;
+    min-height: 20px;
+    background-image: url("../images/ico-tel.svg");
+    background-size: cover;
+    /* background-color: var(--accent-color); */
+  }
 
-	.forDetail{
-		background-color: var(--accent-color);
-		color: #fff;
-	}
-	.forDetail::before{
-		content: '';
-		display: block;
-		width: 3vw;
-		height: 3vw;
-		max-width: 35px;
-		max-height: 35px;
-		min-width:20px;
-		min-height:20px;
-		background-image: url('../images/ico-detail.svg');
-		background-size: cover;
-	}
+  .forDetail {
+    background-color: var(--accent-color);
+    color: #fff;
+    width: 70%;
+  }
+  @media screen and (max-width: 768px) {
+    .forDetail {
+			margin-right: auto;
+			margin-left: auto;
+			width: 100%;
+    }
+  }
 
+  .forDetail::before {
+    content: "";
+    display: block;
+    width: 3vw;
+    height: 3vw;
+    max-width: 35px;
+    max-height: 35px;
+    min-width: 20px;
+    min-height: 20px;
+    background-image: url("../images/ico-detail.svg");
+    background-size: cover;
+  }
 </style>

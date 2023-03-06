@@ -41,6 +41,17 @@ const {className} = Astro.props;
 		margin-left: 42px;
 	}
 	@media screen and (max-width: 768px) {
+		.header{
+			flex-direction: column;
+			font-size: 2.4rem;
+			line-height: 2;
+			text-align: center;
+			padding-top: 6rem;
+			padding-bottom: 4rem;
+		}
+		.header li + li{
+			margin-left: 0;
+		}
 		.footer{
 			flex-direction: column;
 			align-items: center;
