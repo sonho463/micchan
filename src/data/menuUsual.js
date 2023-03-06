@@ -1,6 +1,6 @@
 export default [
   {
-    name: "900円弁当",
+    name: "特注弁当",
     path: "ben-900",
   },
   {

@@ -17,17 +17,20 @@ headingText={headingText}
 >
   <SectionLead>
     <p>
-      おばーたちが作る<br />
-      昔ながらの沖縄定番料理<br />
-      会議のときのお昼ごはんに<br />
-      トゥシビー、結納などのお祝いに<br />
-      ご相談ください
+      みっちゃんのメニューをご紹介します<br>
+			おばーたちが作る<br>
+			昔ながらの沖縄定番料理を<br>
+			ぜひ、ご賞味ください
     </p>
   </SectionLead>
 
   <div class="menu-article">
 
     <SectionHeading02 headingText="折り詰めやオードブル" />
+		<p class="lead">
+      会議のときのお昼ごはんに、トゥシビー、結納などのお祝いのときのオードブル、お弁当などお作りします。
+			一度、ご相談ください
+    </p>
 
     <ul class="menu-folded">
       <li>
@@ -44,6 +47,9 @@ headingText={headingText}
 		<ButtonWrapper className="buttonContainerSection" />
 
 		<SectionHeading02 headingText="いつものお弁当" />
+		<p class="lead">
+      定番お弁当メニューです。「特注弁当」以外のお弁当はすべて５００円です。
+    </p>
 		<MenuUsual />
 		<ButtonWrapper className="buttonContainerSection" />
 
@@ -65,6 +71,14 @@ headingText={headingText}
 	}
 	.folded-article li{
 		flex: 1;
+	}
+
+	.lead{
+		margin-top: -32px;
+		line-height: 2;
+		font-size: 2rem;
+		margin-bottom: 60px;
+
 	}
 
 	@media screen and (max-width: 768px) {
