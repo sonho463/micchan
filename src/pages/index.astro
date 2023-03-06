@@ -10,7 +10,6 @@ import Access from "../components/sections/Access.astro";
 import Contact from "../components/sections/Contact.astro";
 
 import { getBlogs } from "../library/microcms";
-const response = await getBlogs({ fields: ["id", "title"] });
 
 const seo = {
   title: "HOME｜みっちゃん",
@@ -30,3 +29,5 @@ const seo = {
     <Contact />
   </Container>
 </Layout>
+
+<script src="../scripts/top.js"></script>

@@ -25,10 +25,13 @@ const {className} = Astro.props;
     display: flex;
     justify-content: flex-end;
 		font-size: 1.6rem;
-		font-size: clamp(1.2rem,1.6vw,2rem);
+		font-size: clamp(1.2rem,1.4vw,2rem);
   }
-	li+li{
+	.header li+li{
 		margin-left: 5%;
+	}
+	.footer li+li{
+		margin-left: 1%;
 	}
 
 

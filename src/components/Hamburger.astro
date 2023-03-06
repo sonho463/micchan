@@ -1,39 +1,70 @@
 ---
-import lunchBox from '../images/lunchBox.png';
+import lunchBox from "../images/lunchBox.png";
 ---
+
 <div class="hamburger">
-	<span>
-		<img src={lunchBox} alt="">
-	</span>
-	<span></span>
-	<span></span>
+  <span>
+    <img src={lunchBox} alt="" />
+  </span>
+  <span></span>
+  <span></span>
 </div>
 
 <style>
+  .hamburger {
+    width: 36px;
+    height: 36px;
+    display: none;
+  }
+  @media screen and (max-width: 768px) {
+    .hamburger {
+      display: block;
+      position: relative;
+    }
+  }
 
-.hamburger{
-	width: 36px;
-	height: 36px;
-}
+  span {
+    display: block;
+    transition: all 0.3s;
+  }
 
-span{
-	display: block;
-}
+  span:first-of-type {
+    width: 32px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-span:first-of-type{
-	width: 90%;
-	margin-left: auto;
-	margin-right: auto;
-}
+  span:nth-of-type(2) {
+    width: 100%;
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+    height: 2px;
+		background-color: #898989;
+  }
+  span:last-of-type {
+    width: 100%;
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    height: 2px;
+    background-color: #898989;
+  }
 
-span:not(:first-of-type){
-	width: 100%;
-	margin-top: 3px;;
-	height: 2px;
-	background-color: #666;
-}
+  /* ハンバーガーメニューオープン時のスタイル */
 
-.hamburger.open span{
-	
-}
+  .hamburger.open span {
+  }
+
+  .hamburger.open span:first-of-type {
+    opacity: 0;
+  }
+  .hamburger.open span:nth-of-type(2) {
+    bottom: 18px;
+    transform: rotate(405deg);
+  }
+  .hamburger.open span:last-of-type {
+    bottom: 18px;
+    transform: rotate(-45deg);
+  }
 </style>
