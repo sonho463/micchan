@@ -21,9 +21,16 @@ import Hamburger from "./Hamburger.astro";
 <style>
   header {
     background-color: var(--base-color);
-		z-index: 2;
-		position: relative;
-		overflow-y: visible;
+    z-index: 2;
+    position: relative;
+    overflow-y: visible;
+    padding-bottom: 20px;
+  }
+
+  @media screen and (max-width: 768px) {
+		header{
+			padding-bottom: 8px;
+		}
   }
 
   .header__inner {
@@ -45,20 +52,20 @@ import Hamburger from "./Hamburger.astro";
   @media screen and (max-width: 768px) {
     .logoWrapper {
       width: 45%;
-			z-index: 5;
+      z-index: 5;
     }
     .header-right {
-			display: none;
-			position: absolute;
-			right: 0;
-			top: 0;
-			width: 100%;
-			z-index: 1;
-		}
-		.header-right.open{
-			display: flex;
-			flex-direction: column-reverse;
-			background-color: var(--base-color);
-		}
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100%;
+      z-index: 1;
+    }
+    .header-right.open {
+      display: flex;
+      flex-direction: column-reverse;
+      background-color: var(--base-color);
+    }
   }
 </style>

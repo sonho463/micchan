@@ -1,4 +1,5 @@
 ---
+import HeadingH1 from "../../components/parts/HeadingH1.astro";
 import Layout from "../../layouts/Page.astro";
 
 import { getBlogs, getBlogDetail } from "../../library/microcms";
@@ -19,17 +20,54 @@ const blog = await getBlogDetail(infoId as string);
 ---
 <Layout>
   <main>
-		<img src={blog.image.url} alt="">
-    <h1 class="title">{blog.title}</h1>
-    <p class="publishedAt">公開日時：{blog.publishedAt}</p>
-    <div class="post" set:html={blog.content}></div>
+		<figure class="image-block">
+			<img src={blog.image.url} alt="">
+		</figure>
+		<div class="text-block">
+				<HeadingH1 text={blog.title}/>
+			<div class="post" set:html={blog.content}></div>
+		</div>
   </main>
 </Layout>
 
 <style>
   main {
     margin: auto;
-    padding: 1em;
-    max-width: 60ch;
+    /* padding: 0 1em 1em 1em; */
+    /* max-width: 60ch; */
+		min-height: 80vh;
+		padding-bottom: 120px;
+		/* background-color: var(--base-color); */
   }
+	.image-block{
+		height: 50vh;
+		padding-top: 42px;
+		padding-bottom: 42px;
+		/* width: auto; */
+		background-color: var(--base-color);
+		box-sizing: border-box;
+	}
+	.image-block img{
+		display: block;
+		width: 500px;
+		height: 100%;
+		object-fit: cover;
+		margin-right: auto;
+		margin-left: auto;
+	}
+	.text-block	{
+		width: 60%;
+		margin-right: auto;
+		margin-left: auto;
+	}
+	h1{
+		font-size: 3.2rem;
+		font-weight: bold;
+	}
+	.post{
+		margin-top: 42px;
+		font-size: 2.4rem;
+		line-height: 1.8;
+	}
+
 </style>

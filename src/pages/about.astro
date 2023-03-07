@@ -2,6 +2,7 @@
 import Layout from "../layouts/Page.astro";
 import ImgMaster from "../images/master.png";
 import Container from "../components/Container.astro";
+import HeadingH1 from "../components/parts/HeadingH1.astro";
 
 const seo = {
   title: "店主のごあいさつ｜みっちゃん",
@@ -16,9 +17,7 @@ const seo = {
       <figure>
         <img src={ImgMaster} alt="" />
       </figure>
-      <h1>
-        <span> 店主のごあいさつ </span>
-      </h1>
+      <HeadingH1 text="店主のごあいさつ" align="center"/>
       <div class="text-block">
         <p>
           私が中学の頃から、家業の手伝いをさせられていたのを良く憶えてます。
