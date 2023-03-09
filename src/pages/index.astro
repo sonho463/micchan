@@ -10,6 +10,7 @@ import Access from "../components/sections/Access.astro";
 import Contact from "../components/sections/Contact.astro";
 
 import { getBlogs } from "../library/microcms";
+import Loading from "../components/Loading.astro";
 
 const seo = {
   title: "HOME｜みっちゃん",
@@ -19,6 +20,9 @@ const seo = {
 ---
 
 <Layout {seo}>
+	<div id="loader">
+		<Loading />
+	</div>
   <Container>
     <FV />
     <Intro />
@@ -30,4 +34,16 @@ const seo = {
   </Container>
 </Layout>
 
+<style>
+	.loaded{
+		display: none;
+	}
+</style>
+
 <script src="../scripts/top.js"></script>
+<script>
+window.onload = ()=>{
+    const loader = document.getElementById('loader');
+    loader.classList.add('loaded');
+}
+</script>
