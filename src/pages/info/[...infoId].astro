@@ -18,15 +18,18 @@ export async function getStaticPaths() {
 const { infoId } = Astro.params;
 const blog = await getBlogDetail(infoId as string);
 ---
+
 <Layout>
   <main>
-		<figure class="image-block">
-			<img src={blog.image.url} alt="">
-		</figure>
-		<div class="text-block">
-				<HeadingH1 text={blog.title}/>
-			<div class="post" set:html={blog.content}></div>
-		</div>
+    <figure class="image-block">
+      <img src={blog.image.url} alt="" />
+    </figure>
+    <div class="text-block">
+      <Fragment>
+        <HeadingH1 text={blog.title} />
+        <div class="post" set:html={blog.content}></div>
+      </Fragment>
+    </div>
   </main>
 </Layout>
 
@@ -35,39 +38,38 @@ const blog = await getBlogDetail(infoId as string);
     margin: auto;
     /* padding: 0 1em 1em 1em; */
     /* max-width: 60ch; */
-		min-height: 80vh;
-		padding-bottom: 120px;
-		/* background-color: var(--base-color); */
+    min-height: 80vh;
+    padding-bottom: 120px;
+    /* background-color: var(--base-color); */
   }
-	.image-block{
-		height: 50vh;
-		padding-top: 42px;
-		padding-bottom: 42px;
-		/* width: auto; */
-		background-color: var(--base-color);
-		box-sizing: border-box;
-	}
-	.image-block img{
-		display: block;
-		width: 500px;
-		height: 100%;
-		object-fit: cover;
-		margin-right: auto;
-		margin-left: auto;
-	}
-	.text-block	{
-		width: 60%;
-		margin-right: auto;
-		margin-left: auto;
-	}
-	h1{
-		font-size: 3.2rem;
-		font-weight: bold;
-	}
-	.post{
-		margin-top: 42px;
-		font-size: 2.4rem;
-		line-height: 1.8;
-	}
-
+  .image-block {
+    height: 50vh;
+    padding-top: 42px;
+    padding-bottom: 42px;
+    /* width: auto; */
+    background-color: var(--base-color);
+    box-sizing: border-box;
+  }
+  .image-block img {
+    display: block;
+    width: 500px;
+    height: 100%;
+    object-fit: cover;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .text-block {
+    width: 60%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  h1 {
+    font-size: 3.2rem;
+    font-weight: bold;
+  }
+  .post {
+    margin-top: 42px;
+    font-size: 2.4rem;
+    line-height: 1.8;
+  }
 </style>

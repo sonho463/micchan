@@ -3,6 +3,10 @@ export default [
     name: "特注弁当",
     path: "ben-900",
   },
+	{
+		name: "観光におすすめ弁当",
+		path: "tour",
+	},
   {
     name: "日替わり",
     path: "daily",
@@ -28,39 +32,39 @@ export default [
     path: "mabo-nasu",
   },
   {
-    name: "中味汁",
-    path: "nakami",
-  },
-  {
-    name: "なすみそ",
+		name: "なすみそ",
     path: "nasu-miso",
   },
   {
-    name: "煮つけ",
+		name: "煮つけ",
     path: "nitsuke",
   },
   {
-    name: "ポークたまご",
+		name: "ポークたまご",
     path: "pork-egg",
   },
   {
-    name: "さば味噌",
+		name: "さば味噌",
     path: "saba-miso",
   },
   {
-    name: "豆腐ちゃんぷるー",
+		name: "豆腐ちゃんぷるー",
     path: "tofu-champlu",
   },
   {
-    name: "とんかつ",
+		name: "とんかつ",
     path: "ton-katsu",
   },
   {
-    name: "焼き肉",
+		name: "焼き肉",
     path: "yakiniku-box",
   },
   {
-    name: "焼き肉",
+		name: "焼き肉",
     path: "yakiniku01",
   },
+	{
+		name: "中味汁",
+		path: "nakami",
+	},
 ];
