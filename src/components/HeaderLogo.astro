@@ -1,10 +1,13 @@
 ---
-import logoImage from '../images/header-logo.png'
+import { Image } from '@astrojs/image/components';
+import logoImage from '/src/images/header-logo.png'
+console.log(logoImage)
 ---
 
 <h1>
 	<a href="/#">
-		<img src={logoImage} alt="仕出し・弁当・オードブル　みっちゃん" />
+		<img src={logoImage.src} alt="仕出し・弁当・オードブル　みっちゃん" />
+		<!-- <img src={logoImage} alt="仕出し・弁当・オードブル　みっちゃん" /> -->
 	</a>
 </h1>
 

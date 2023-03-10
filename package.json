@@ -9,10 +9,11 @@
   },
   "devDependencies": {
     "@astrojs/sitemap": "^1.0.0",
-    "astro": "^1.1.5",
+    "astro": "^2.1.2",
     "prettier-plugin-astro": "^0.0.12"
   },
   "dependencies": {
+    "@astrojs/image": "^0.16.0",
     "microcms-js-sdk": "^2.3.2",
     "swiper": "^9.0.5"
   }
