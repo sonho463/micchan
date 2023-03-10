@@ -7,5 +7,8 @@ import image from "@astrojs/image";
 // https://astro.build/config
 export default defineConfig({
   site: "https://astro-minimal-starter.netlify.app/",
-  integrations: [sitemap(), image()]
+  integrations: [sitemap(), image({
+		serviceEntryPoint: '@astrojs/image/sharp'
+	})],
+
 });

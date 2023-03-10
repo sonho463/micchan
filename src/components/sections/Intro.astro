@@ -1,12 +1,15 @@
 ---
 import introImage from "../../images/micchan.png";
 import Button from "../Button.astro";
+import { Image } from "@astrojs/image/components";
+console.log(introImage)
 ---
 
 <section class="intro">
   <div class="intro__inner">
     <figure class="intro__image">
-      <img src={introImage.src} alt="みっちゃん" />
+      <!-- <img src={introImage.src} alt="みっちゃん" /> -->
+			<Image src={introImage} aspectRatio="7:10" />
     </figure>
     <div class="intro__text">
       <p>
@@ -34,6 +37,8 @@ import Button from "../Button.astro";
 <style>
   img {
     width: 100%;
+		height: 100%;
+		object-fit: cover;
   }
   .intro__inner {
     display: flex;
