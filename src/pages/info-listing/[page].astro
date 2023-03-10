@@ -1,0 +1,53 @@
+---
+import Layout from "../../layouts/Page.astro";
+
+import Container from "../../components/Container.astro";
+import HeadingH1 from "../../components/parts/HeadingH1.astro";
+import InfoArticle from "../../components/InfoArticle.astro";
+
+import { getBlogs } from "../../library/microcms";
+
+export const getStaticPaths = async ({ paginate }) => {
+  const cats = await getBlogs({ limit: 1000 });
+  return paginate(cats.contents, { pageSize: 4 });
+};
+const { page } = Astro.props;
+
+
+
+const seo = {
+  title: "お知らせ一覧｜みっちゃん",
+  description:
+    "沖縄県那覇市宇栄原で50年営業している仕出し、弁当、オードブルのお店です。",
+};
+---
+
+<Layout {seo}>
+  <Container>
+		<HeadingH1
+		text="お知らせ一覧" />
+		{page.data.map((info) => {
+			return (<p> {info.title}</p>);
+		})}
+		 <ul>
+			{/* page.url.prevがある場合は前ページへのリンクを表示 */}
+			{page.url.prev && (
+				<li>
+					<a href={page.url.prev}>PREV</a>
+				</li>
+			)}
+			{/* page.url.nextがある場合は次ページへのリンクを表示 */}
+			{page.url.next && (
+				<li>
+					<a href={page.url.next}>NEXT</a>
+				</li>
+			)}
+		</ul>
+
+  </Container>
+
+</Layout>
+
+<style>
+
+</style>

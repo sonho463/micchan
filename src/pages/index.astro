@@ -20,9 +20,9 @@ const seo = {
 ---
 
 <Layout {seo}>
-	<div id="loader">
-		<Loading />
-	</div>
+  <div id="loader">
+    <Loading />
+  </div>
   <Container>
     <FV />
     <Intro />
@@ -34,16 +34,18 @@ const seo = {
   </Container>
 </Layout>
 
-<style>
-	.loaded{
-		display: none;
-	}
-</style>
+
 
 <script src="../scripts/top.js"></script>
 <script>
-window.onload = ()=>{
-    const loader = document.getElementById('loader');
-    loader.classList.add('loaded');
-}
+  window.onload = () => {
+    const loader = document.getElementById("loader");
+    loader.classList.add("loaded");
+  };
 </script>
+
+<style>
+  .loaded {
+    display: none;
+  }
+</style>
