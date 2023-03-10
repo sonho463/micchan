@@ -7,9 +7,11 @@ hamburger.addEventListener("click", () => {
 	if (!hamburger.classList.contains("open")) {
 		hamburger.classList.add("open");
 		headerRight.classList.add('open')
+		document.body.style.overflow="hidden";
 	} else {
 		hamburger.classList.remove("open");
 		headerRight.classList.remove('open')
+		document.body.style.overflow="auto";
 	}
 });
 
@@ -23,6 +25,7 @@ linkButtonArray.forEach((ele)=>{
 		if(hamburger.classList.contains('open')){
 			hamburger.classList.remove('open')
 			headerRight.classList.remove('open')
+			document.body.style.overflow="auto";
 		}
 	})
 })
