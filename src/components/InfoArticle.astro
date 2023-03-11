@@ -1,6 +1,8 @@
 ---
 import { getBlogs } from "../library/microcms";
-const response = await getBlogs({ fields: ["id", "title","content","image"],limit: 3 });
+
+const {num}=Astro.props
+const response = await getBlogs({ fields: ["id", "title","content","image"],limit: num });
 
 // const allinfos = await Astro.glob('../pages/info/*.md');
 // allinfos.forEach((el)=>{

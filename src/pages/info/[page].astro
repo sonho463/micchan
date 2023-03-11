@@ -9,7 +9,7 @@ import { getBlogs } from "../../library/microcms";
 
 export const getStaticPaths = async ({ paginate }) => {
   const infos = await getBlogs({ limit: 1000 });
-  return paginate(infos.contents, { pageSize: 5 });
+  return paginate(infos.contents, { pageSize: 1 });
 };
 const { page } = Astro.props;
 
@@ -29,9 +29,10 @@ const seo = {
 		align="center" />
 		<ul class="infoList">
 		{page.data.map((info) => {
+			const link = info.id
 			return (
 					<li class="infoItem">
-			<a href={info.id}>
+			<a href={link}>
 				<div class="text-block">
 					<h2>
 						<span>
