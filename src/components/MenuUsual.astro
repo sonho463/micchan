@@ -1,7 +1,7 @@
 ---
 import menuUsual from "../data/menuUsual";
 import ButtonWrapper from "./ButtonWrapper.astro";
-import { Image,Picture } from "@astrojs/image/components";
+// import { Image,Picture } from "@astrojs/image/components";
 
 
 
@@ -20,7 +20,7 @@ import { Image,Picture } from "@astrojs/image/components";
 		menuUsual.map((item)=>(
 			<li>
 				<figure>
-					<Image src={`assets/menuUsual/${item.path}.png`} height={150} aspectRatio={1.35}/>
+					<img src={`assets/menuUsual/${item.path}.png`}/>
 				<figcaption>{item.name}</figcaption>
 			</figure>
 		</li>
