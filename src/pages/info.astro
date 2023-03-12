@@ -1,8 +1,11 @@
 ---
 import Layout from "../layouts/Page.astro";
 import Container from "../components/Container.astro";
-import InfoArticle from "../components/InfoArticle.astro"
 import HeadingH1 from "../components/parts/HeadingH1.astro";
+import { getBlogs } from "../library/microcms";
+
+const response = await getBlogs({ fields: ["id", "title","content","image"],limit: 1000 });
+
 ---
 
 <Layout>
@@ -10,6 +13,117 @@ import HeadingH1 from "../components/parts/HeadingH1.astro";
 		<HeadingH1
 		text="お知らせ一覧"
 		align="center" />
-		<InfoArticle num="1000"/>
+
+		<ul>
+			{response.contents.map((info)=>{
+				const contentText = info.content.replace(/(<([^>]+)>)/gi, '');
+				return (
+				<li>
+					<a href={info.id}>
+						<div class="text-block">
+							<h2>
+								<span>
+									{info.title}
+								</span>
+							</h2>
+							<p>
+								{contentText}
+								</p>
+						</div>
+						<figure>
+							<img src={info.image.url} alt="">
+						</figure>
+
+						</a>
+				</li>
+			)
+		})}
+
+		</ul>
 	</Container>
 </Layout>
+
+<style>
+	li{
+	display: flex;
+	padding: 36px 8%;
+	border-top: 1px solid #333;
+}
+
+a {
+	display: flex;
+	width: 100%;
+}
+
+
+
+li:last-of-type{
+	border-bottom: 1px solid #333;
+}
+.text-block {
+	width: 70%;
+}
+
+h2{
+	width: fit-content;
+	margin-right: auto;
+	position: relative;
+}
+p{
+	height: 100px;
+	line-height: 1.8;
+	margin-top: 36px;
+	padding-right: 24px;
+	font-size: 20px;
+	/* 三点リーダー対応 */
+	display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+
+  overflow: hidden;
+}
+span{
+	font-size: 3.2rem;
+	font-family: var(--font-design-main);
+	position: relative;
+	z-index: 2
+}
+h2::before{
+		content: '';
+		position: absolute;
+		transform: translate(-50%,-20%);
+		display: block;
+		background-image: url(../images/heading-mark.svg);
+		background-size: contain;
+		width: 80px;
+		height: 60px;
+		z-index: 1;
+	}
+
+figure{
+	width: 30%;
+}
+
+@media screen and (max-width: 768px) {
+	li{
+		padding: 40px 0 20px;
+	}
+ a{
+	flex-direction: column-reverse;
+ }
+ figure{
+	width: 100%;
+ }
+ .text-block{
+	margin-top: 32px;
+	width: 100%;
+ }
+ p{
+	padding-right: 0;
+	margin-top: 8px;
+	font-size: 1.8rem;
+	line-height: 1.4;
+	height: 72px;
+ }
+}
+	</style>
