@@ -33,6 +33,8 @@ const blog = await getBlogDetail(infoId as string);
   </main>
 </Layout>
 
+<script src="../../scripts/top.js"></script>
+
 <style>
   main {
     margin: auto;
@@ -52,7 +54,8 @@ const blog = await getBlogDetail(infoId as string);
   }
   .image-block img {
     display: block;
-    width: 500px;
+    width: 100%;
+    max-width: 600px;
     height: 100%;
     object-fit: cover;
     margin-right: auto;
@@ -75,19 +78,20 @@ const blog = await getBlogDetail(infoId as string);
     line-height: 1.8;
   }
 
-	@media screen and (max-width: 768px) {
-		.image-block{
-			padding-bottom: 0;
-		}
-		.image-block img{
-			width: 100%;
-		}
-		.text-block{
-			width: 90%;
-			padding-top: 16px;
-		}
-		.post{
-			font-size: 1.8rem;
-		}
-}
+  @media screen and (max-width: 768px) {
+    .image-block {
+      padding-bottom: 0;
+    }
+    .image-block img {
+      width: 100%;
+			max-width: unset;
+    }
+    .text-block {
+      width: 90%;
+      padding-top: 16px;
+    }
+    .post {
+      font-size: 1.8rem;
+    }
+  }
 </style>
