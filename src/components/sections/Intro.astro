@@ -1,15 +1,12 @@
 ---
 import introImage from "../../images/micchan.png";
 import Button from "../Button.astro";
-import { Image } from "@astrojs/image/components";
-console.log(introImage)
 ---
 
 <section class="intro">
   <div class="intro__inner">
     <figure class="intro__image">
-      <!-- <img src={introImage.src} alt="みっちゃん" /> -->
-			<img src={introImage} />
+      <img src={introImage.src} alt="みっちゃん" />
     </figure>
     <div class="intro__text">
       <p>

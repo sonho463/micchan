@@ -20,6 +20,9 @@ const response = await getBlogs({ fields: ["id", "title","content","image"],limi
 				return (
 				<li>
 					<a href={info.id}>
+						<figure>
+							<img src={info.image.url} alt="">
+						</figure>
 						<div class="text-block">
 							<h2>
 								<span>
@@ -30,10 +33,6 @@ const response = await getBlogs({ fields: ["id", "title","content","image"],limi
 								{contentText}
 								</p>
 						</div>
-						<figure>
-							<img src={info.image.url} alt="">
-						</figure>
-
 						</a>
 				</li>
 			)
@@ -44,24 +43,37 @@ const response = await getBlogs({ fields: ["id", "title","content","image"],limi
 </Layout>
 
 <style>
+	body {
+		background-color: var(--base-color);
+	}
+	ul{
+		padding-bottom: 60px;
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		align-items: stretch;
+		row-gap: 32px;
+	}
+	ul::after{
+		content: '';
+		width: 30%;
+		
+	}
 	li{
-	display: flex;
-	padding: 36px 8%;
-	border-top: 1px solid #333;
+		width: 30%;
+		background-color: #fff;
+		box-shadow: rgba(0,0,0,.2) 2px 2px 2px;
+		border-radius: 12px 12px 0 0;
 }
 
+
+
 a {
-	display: flex;
 	width: 100%;
 }
 
-
-
-li:last-of-type{
-	border-bottom: 1px solid #333;
-}
-.text-block {
-	width: 70%;
+.text-block{
+	padding: 12px 4%;
 }
 
 h2{
@@ -70,11 +82,11 @@ h2{
 	position: relative;
 }
 p{
-	height: 100px;
+	height: 88px;
 	line-height: 1.8;
 	margin-top: 36px;
 	padding-right: 24px;
-	font-size: 20px;
+	font-size: 16px;
 	/* 三点リーダー対応 */
 	display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -83,25 +95,24 @@ p{
   overflow: hidden;
 }
 span{
-	font-size: 3.2rem;
+	font-size: 2.0rem;
 	font-family: var(--font-design-main);
 	position: relative;
 	z-index: 2
 }
-h2::before{
-		content: '';
-		position: absolute;
-		transform: translate(-50%,-20%);
-		display: block;
-		background-image: url(../images/heading-mark.svg);
-		background-size: contain;
-		width: 80px;
-		height: 60px;
-		z-index: 1;
-	}
 
 figure{
-	width: 30%;
+	width: 100%;
+	height: 150px;
+	overflow: hidden;
+	border-radius: 12px 12px 0 0;
+
+}
+img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center center;
 }
 
 @media screen and (max-width: 768px) {

@@ -2,7 +2,7 @@
 import { getBlogs } from "../library/microcms";
 
 const {num}=Astro.props
-const response = await getBlogs({ fields: ["id", "title","content","image"],limit: num });
+const response = await getBlogs({ fields: ["id", "title","content","image"],limit: 3 });
 
 // const allinfos = await Astro.glob('../pages/info/*.md');
 // allinfos.forEach((el)=>{
@@ -49,6 +49,7 @@ const response = await getBlogs({ fields: ["id", "title","content","image"],limi
 
 a {
 	display: flex;
+	align-items: center;
 	width: 100%;
 }
 
@@ -99,6 +100,15 @@ h2::before{
 
 figure{
 	width: 30%;
+	height: 160px;
+	overflow: hidden;
+}
+
+img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center center;
 }
 
 @media screen and (max-width: 768px) {
