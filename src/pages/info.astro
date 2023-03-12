@@ -54,10 +54,11 @@ const response = await getBlogs({ fields: ["id", "title","content","image"],limi
 		align-items: stretch;
 		row-gap: 32px;
 	}
+
 	ul::after{
 		content: '';
 		width: 30%;
-		
+
 	}
 	li{
 		width: 30%;
@@ -65,6 +66,7 @@ const response = await getBlogs({ fields: ["id", "title","content","image"],limi
 		box-shadow: rgba(0,0,0,.2) 2px 2px 2px;
 		border-radius: 12px 12px 0 0;
 }
+
 
 
 
@@ -116,8 +118,11 @@ img{
 }
 
 @media screen and (max-width: 768px) {
+	ul{
+		flex-direction: column;
+	}
 	li{
-		padding: 40px 0 20px;
+		width: 100%;
 	}
  a{
 	flex-direction: column-reverse;
@@ -126,7 +131,8 @@ img{
 	width: 100%;
  }
  .text-block{
-	margin-top: 32px;
+	margin-top: 12px;
+	padding-bottom: 32px;
 	width: 100%;
  }
  p{
@@ -138,3 +144,5 @@ img{
  }
 }
 	</style>
+
+	<script src="../scripts/top.js"></script>

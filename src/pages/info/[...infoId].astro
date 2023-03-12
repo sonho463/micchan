@@ -58,11 +58,13 @@ const blog = await getBlogDetail(infoId as string);
     margin-right: auto;
     margin-left: auto;
   }
+
   .text-block {
     width: 60%;
     margin-right: auto;
     margin-left: auto;
   }
+
   h1 {
     font-size: 3.2rem;
     font-weight: bold;
@@ -72,4 +74,20 @@ const blog = await getBlogDetail(infoId as string);
     font-size: 2.4rem;
     line-height: 1.8;
   }
+
+	@media screen and (max-width: 768px) {
+		.image-block{
+			padding-bottom: 0;
+		}
+		.image-block img{
+			width: 100%;
+		}
+		.text-block{
+			width: 90%;
+			padding-top: 16px;
+		}
+		.post{
+			font-size: 1.8rem;
+		}
+}
 </style>
