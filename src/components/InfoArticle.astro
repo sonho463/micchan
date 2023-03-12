@@ -1,5 +1,6 @@
 ---
 import { getBlogs } from "../library/microcms";
+import defaultImage from "../images/micchan.png";
 
 const {num}=Astro.props
 const response = await getBlogs({ fields: ["id", "title","content","image"],limit: 3 });
@@ -16,7 +17,7 @@ const response = await getBlogs({ fields: ["id", "title","content","image"],limi
 	{response.contents.map((info)=>{
 		const contentText = info.content.replace(/(<([^>]+)>)/gi, '');
 		const linkText = 'info/' + info.id;
-		return (
+ 		return (
 		<li>
 			<a href={linkText}>
 				<div class="text-block">
