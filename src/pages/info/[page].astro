@@ -7,6 +7,21 @@ import InfoArticle from "../../components/InfoArticle.astro";
 
 import { getBlogs } from "../../library/microcms";
 
+import { defineConfig } from 'astro/config';
+
+import { fileURLToPath } from 'url';
+import path, { dirname } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+console.log('aaa')
+console.log(__filename)
+console.log(import.meta)
+console.log(__dirname)
+
+const linktext= __dirname + '/aaa'
+
 export const getStaticPaths = async ({ paginate }) => {
   const infos = await getBlogs({ limit: 1000 });
   return paginate(infos.contents, { pageSize: 1 });
@@ -19,6 +34,7 @@ const seo = {
   title: "お知らせ一覧｜みっちゃん",
   description:
     "沖縄県那覇市宇栄原で50年営業している仕出し、弁当、オードブルのお店です。",
+
 };
 ---
 
@@ -27,6 +43,7 @@ const seo = {
 		<HeadingH1
 		text="お知らせ一覧"
 		align="center" />
+		<a href={linktext}>test</a>
 		<ul class="infoList">
 		{page.data.map((info) => {
 			const link = info.id
