@@ -1,26 +1,9 @@
 ---
 import Layout from "../../layouts/Page.astro";
-
 import Container from "../../components/Container.astro";
 import HeadingH1 from "../../components/parts/HeadingH1.astro";
 import InfoArticle from "../../components/InfoArticle.astro";
-
 import { getBlogs } from "../../library/microcms";
-
-import { defineConfig } from 'astro/config';
-
-import { fileURLToPath } from 'url';
-import path, { dirname } from 'path';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-console.log('aaa')
-console.log(__filename)
-console.log(import.meta)
-console.log(__dirname)
-
-const linktext= __dirname + '/aaa'
 
 export const getStaticPaths = async ({ paginate }) => {
   const infos = await getBlogs({ limit: 1000 });
@@ -43,10 +26,10 @@ const seo = {
 		<HeadingH1
 		text="お知らせ一覧"
 		align="center" />
-		<a href={linktext}>test</a>
 		<ul class="infoList">
 		{page.data.map((info) => {
-			const link = info.id
+			const contentText = info.content.replace(/(<([^>]+)>)/gi, '');
+			const link = '/info/' + info.id
 			return (
 					<li class="infoItem">
 			<a href={link}>
@@ -57,7 +40,7 @@ const seo = {
 						</span>
 					</h2>
 					<p>
-						{info.content}
+						{contentText}
 						</p>
 				</div>
 				<figure>
