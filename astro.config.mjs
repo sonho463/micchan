@@ -10,5 +10,5 @@ export default defineConfig({
   integrations: [sitemap(), image({
 		serviceEntryPoint: '@astrojs/image/sharp'
 	})],
-
+	root: "./",
 });
