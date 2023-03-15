@@ -1,8 +1,11 @@
 ---
 import FvHeading from "../parts/FvHeading.astro";
 import FvImage from "../../images/fv/fv01x2.png";
+import FvImageWebp from "../../images/fv/fv01x2.webp";
 import FvImage02 from "../../images/fv/fv2x2.png";
+import FvImage02Webp from "../../images/fv/fv2x2.webp";
 import FvImage03 from "../../images/fv/fv3.png";
+import FvImage03Webp from "../../images/fv/fv3.webp";
 ---
 <section class="fv">
   <div class="fv-inner">
@@ -13,17 +16,26 @@ import FvImage03 from "../../images/fv/fv3.png";
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <figure>
-            <img src={FvImage.src} alt="" />
+						<picture>
+							<source srcset={FvImageWebp.src} type="image/webp">
+							<img src={FvImage.src} alt="logo">
+						</picture>
           </figure>
         </div>
         <div class="swiper-slide">
-          <figure>
-            <img src={FvImage02.src} alt="" />
+					<figure>
+						<picture>
+							<source srcset={FvImage02Webp.src} type="image/webp">
+							<img src={FvImage02.src} alt="logo">
+						</picture>
           </figure>
         </div>
         <div class="swiper-slide">
-          <figure>
-            <img src={FvImage03.src} alt="" />
+					<figure>
+						<picture>
+							<source srcset={FvImage03Webp.src} type="image/webp">
+							<img src={FvImage03.src} alt="logo">
+						</picture>
           </figure>
         </div>
       </div>
