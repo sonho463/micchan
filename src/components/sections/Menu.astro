@@ -4,9 +4,10 @@ import SectionHeading02 from "../parts/SectionHeading02.astro";
 import SectionLead from "../parts/SectionLead.astro";
 const headingText = "メニューのご紹介";
 import bannerFolded from "../../images/menu/banner-folded.png";
+import bannerFoldedWebp from "../../images/menu/banner-folded.webp";
 import bannerMeeting from "../../images/menu/banner-meeting.png";
+import bannerMeetingWebp from "../../images/menu/banner-meeting.webp";
 import MenuUsual from "../MenuUsual.astro";
-import Button from "../Button.astro";
 import ButtonWrapper from "../ButtonWrapper.astro";
 ---
 
@@ -35,12 +36,18 @@ headingText={headingText}
     <ul class="menu-folded">
       <li>
         <figure>
-          <img src={bannerFolded.src} alt="折り詰めやオードブル" />
+					<picture>
+						<source srcset={bannerFoldedWebp.src} type="image/webp">
+						<img src={bannerFolded.src} alt="折り詰めやオードブル" />
+					</picture>
         </figure>
       </li>
       <li>
         <figure>
-          <img src={bannerMeeting.src} alt="" />
+					<picture>
+						<source srcset={bannerMeetingWebp} type="image/webp">
+						<img src={bannerMeeting.src} alt="" />
+					</picture>
         </figure>
       </li>
     </ul>

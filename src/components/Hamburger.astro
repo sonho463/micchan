@@ -1,10 +1,14 @@
 ---
 import lunchBox from "../images/lunchBox.png";
+import lunchBoxWebp from "../images/lunchBox.webp";
 ---
 
 <div class="hamburger">
   <span>
-    <img src={lunchBox.src} alt="" />
+<picture>
+	<source srcset={lunchBoxWebp.src} type="image/webp"/>
+	<img src={lunchBox.src} alt="弁当箱アイコン" />
+</picture>
   </span>
   <span></span>
   <span></span>
