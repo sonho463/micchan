@@ -20,7 +20,10 @@ import ButtonWrapper from "./ButtonWrapper.astro";
 		menuUsual.map((item)=>(
 			<li>
 				<figure>
-					<img src={`assets/menuUsual/${item.path}.jpg`} loading="lazy"/>
+					<picture>
+						<source srcset={`/assets/menuUsual/${item.path}.webp`} type="image/webp" loading="lazy"/>
+						<img src={`/assets/menuUsual/${item.path}.jpg`} alt="menu" loading="lazy"/>
+						</picture>
 				<figcaption>{item.name}</figcaption>
 			</figure>
 		</li>
