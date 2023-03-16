@@ -5,7 +5,7 @@ import image from "@astrojs/image";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://astro-minimal-starter.netlify.app/",
+  site: "https://micchan.com/",
   integrations: [
     sitemap(),
     image({
