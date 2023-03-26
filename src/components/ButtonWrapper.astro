@@ -16,13 +16,19 @@ const {className} = Astro.props;
 
 <style>
 	.buttonContainerHeader{
-		width: 90%;
+		width: 100%;
 		display: flex;
 		justify-content: flex-end;
 		margin-left: auto;
 		gap: 8px;
-		margin-bottom: 12px;
+		padding-bottom: 32px;
 	}
+
+	@media screen and (max-width: 768px) {
+		.buttonContainerHeader{
+			background-color: #f4f4a0;
+		}
+								}
 
 
 	.buttonContainerSection{

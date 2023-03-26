@@ -19,8 +19,8 @@ headingText={headingText}
   <SectionLead>
     <p>
       みっちゃんのメニューをご紹介します<br>
-			おばーたちが作る<br>
-			昔ながらの沖縄定番料理を<br>
+			おばーたちが作る<br class="u-active-tbpc">
+			昔ながらの沖縄定番料理を<br class="u-active-tbpc">
 			ぜひ、ご賞味ください
     </p>
   </SectionLead>
@@ -100,5 +100,16 @@ headingText={headingText}
 		}
 								}
 
+								.u-active-tbpc{
+	display: inline;
+}
+@media screen and (max-width: 480px) {
+	.u-active-tbpc{
+		display: none;
+	}
+	p{
+		text-align: justify;
+	}
+}
 
 </style>

@@ -10,23 +10,19 @@ import Button from "../Button.astro";
     </figure>
     <div class="intro__text">
       <p>
-				仕出し・お弁当・オードブルのみっちゃんです。<br>
-				那覇市宇栄原で５０年<br>
-				地元のみなさんに支えられてきました。
-			</p>
-			<p>
-				ばあちゃんたちが厨房でがんばっています。<br>
-				伝統的な沖縄の味を<br>
-				多くの人にお届けできるように<br>
-				これからもがんばってまいります。
-			</p>
-			<div class="button">
-				<Button
-					text='店主のごあいさつ'
-					cls='forDetail'
-					path='/about'
-				/>
-			</div>
+        仕出し・お弁当・オードブルのみっちゃんです。<br class="u-active-tbpc" />
+        那覇市宇栄原で５０年 <br class="u-active-tbpc" />
+        地元のみなさんに支えられてきました。
+      </p>
+      <p>
+        ばあちゃんたちが厨房でがんばっています。<br />
+        伝統的な沖縄の味を<br class="u-active-tbpc" />
+        多くの人にお届けできるように<br class="u-active-tbpc" />
+        これからもがんばってまいります。
+      </p>
+      <div class="button">
+        <Button text="店主のごあいさつ" cls="forDetail" path="/about" />
+      </div>
     </div>
   </div>
 </section>
@@ -34,8 +30,8 @@ import Button from "../Button.astro";
 <style>
   img {
     width: 100%;
-		height: 100%;
-		object-fit: cover;
+    height: 100%;
+    object-fit: cover;
   }
   .intro__inner {
     display: flex;
@@ -52,15 +48,27 @@ import Button from "../Button.astro";
     margin-top: 32px;
   }
 
-	.button{
-		margin-top: 24px;
-	display: flex;
-	justify-content: flex-end;
-	}
+  .button {
+    margin-top: 24px;
+    display: flex;
+    justify-content: flex-end;
+  }
 
-	@media screen and (max-width: 768px) {
-		.intro__inner{
-			flex-direction: column;
-		}
-								}
+  @media screen and (max-width: 768px) {
+    .intro__inner {
+      flex-direction: column;
+    }
+  }
+
+	.u-active-tbpc{
+	display: inline;
+}
+@media screen and (max-width: 480px) {
+	.u-active-tbpc{
+		display: none;
+	}
+	p{
+		text-align: justify;
+	}
+}
 </style>
