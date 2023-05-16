@@ -4,18 +4,24 @@ import Base from "../../layouts/Base.astro";
 import type { Props as BaseHeadProps } from "../../components/BaseHead.astro";
 import Button from "../../components/Button.astro";
 
-import lineup01 from "../../images/car-rental/lineup01.jpg"
-import lineup02 from "../../images/car-rental/lineup02.jpg"
+import estima from "../../images/car-rental/estima.jpg"
+import serena from "../../images/car-rental/serena.jpg"
+import stepwagon from "../../images/car-rental/stepwagon.jpg"
 import form from "../../images/car-rental/form.svg"
 import recieve from "../../images/car-rental/recieve.svg"
 import submit from "../../images/car-rental/submit.svg"
 import done from "../../images/car-rental/done.svg"
 import micchan from "../../images/micchan.png"
 
-
 import Background from "../../components/parts/Background.astro";
 import SectionLead from "../../components/parts/SectionLead.astro";
 
+
+
+
+interface ImageObj {
+	src: string
+}
 
 export interface Props {
   seo?: BaseHeadProps;
@@ -68,22 +74,46 @@ name="lineup"
 bgType="solidWhite"
 headingText='ラインナップ'
 >
-		<div class="inner">
+<div class="inner">
 			<ul class="lineup__list">
 				<li>
 					<figure>
-						<img src={lineup01.src} alt="">
+						<img src={estima.src} alt="" />
 					</figure>
 					<p>
-						車種などの掲載情報
+						エスティマ
+					</p>
+					<p>
+						カーナビ<br>
+			子供用シート貸出￥３，０００<br>
+			フルカバーの保険付き<br>
+			ペット乗車可能
 					</p>
 				</li>
 				<li>
 					<figure>
-						<img src={lineup02.src} alt="">
+						<img src={serena.src} alt="" />
 					</figure>
 					<p>
-						車種などの掲載情報
+						セレナ
+					</p>
+					<p>
+						カーナビ<br>
+			子供用シート貸出￥３，０００<br>
+			フルカバーの保険付き
+					</p>
+				</li>
+				<li>
+					<figure>
+						<img src={stepwagon.src} alt="" />
+					</figure>
+					<p>
+						ステップワゴン
+					</p>
+					<p>
+						カーナビ<br>
+			子供用シート貸出￥３，０００<br>
+			フルカバーの保険付き
 					</p>
 				</li>
 			</ul>
@@ -229,6 +259,7 @@ headingText='お気軽にお問い合わせください！'
 	.fv{
 		position: relative;
 		background-image: url("../../images/car-rental/fv-bg.jpg");
+		background-size: cover;
 		height: 700px;
 }
 
@@ -289,9 +320,11 @@ headingText='お気軽にお問い合わせください！'
 
 
 	.lineup__list{
+		margin-top: 60px;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		gap: 5%;
 	}
 
 .appeal{
