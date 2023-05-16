@@ -80,10 +80,10 @@ headingText='ラインナップ'
 					<figure>
 						<img src={estima.src} alt="" />
 					</figure>
-					<p>
+					<p class="lineup__car-name">
 						エスティマ
 					</p>
-					<p>
+					<p class="lineup__car-desc">
 						カーナビ<br>
 			子供用シート貸出￥３，０００<br>
 			フルカバーの保険付き<br>
@@ -94,10 +94,10 @@ headingText='ラインナップ'
 					<figure>
 						<img src={serena.src} alt="" />
 					</figure>
-					<p>
+					<p class="lineup__car-name">
 						セレナ
 					</p>
-					<p>
+					<p class="lineup__car-desc">
 						カーナビ<br>
 			子供用シート貸出￥３，０００<br>
 			フルカバーの保険付き
@@ -107,10 +107,10 @@ headingText='ラインナップ'
 					<figure>
 						<img src={stepwagon.src} alt="" />
 					</figure>
-					<p>
+					<p class="lineup__car-name">
 						ステップワゴン
 					</p>
-					<p>
+					<p class="lineup__car-desc">
 						カーナビ<br>
 			子供用シート貸出￥３，０００<br>
 			フルカバーの保険付き
@@ -126,7 +126,7 @@ headingText='ご利用までの流れ'
 >
 		<div class="inner">
 			<div class="flow__form">
-			<h3>フォームでのご予約</h3>
+			<h3 class="flow__h3">フォームでのご予約</h3>
 			<ul class="flow__list">
 				<li>
 					<h4>
@@ -136,7 +136,10 @@ headingText='ご利用までの流れ'
 						<img src={form.src} alt="">
 					</figure>
 					<p>
-						こちらをクリックするか、ページ内のボタンから、フォーム画面へお越しください。必要事項をご記入の上、送信をお願いします。
+						<a href="https://forms.gle/mq96vvr7MZ1HFBWH7">
+							こちら
+						</a>
+						をクリックするか、ページ内のボタンから、フォーム画面へお越しください。必要事項をご記入の上、送信をお願いします。
 					</p>
 
 
@@ -186,7 +189,7 @@ headingText='ご利用までの流れ'
 			</div>
 			</div>
 			<div class="flow__tel">
-				<h3>お電話でのご予約</h3>
+				<h3 class="flow__h3">お電話でのご予約</h3>
 				<p>
 					<a href="tel:090-1875-3314">090-1875-3314</a>
 					までご連絡ください。
@@ -210,7 +213,7 @@ headingText='ご利用までの流れ'
 	<Background
 name="cta"
 bgType="solidWhite"
-headingText='お気軽にお問い合わせください！'
+headingText='お気軽にお電話を！'
 >
 
 		<div class="inner">
@@ -263,12 +266,25 @@ headingText='お気軽にお問い合わせください！'
 		height: 700px;
 }
 
+@media screen and (max-width: 768px){
+	.fv{
+		background-size: 100%;
+		background-repeat: no-repeat;
+	}
+}
+
 
 	.fv__header{
 		margin-top: -32px;
 		display: flex;
 		align-items: center;
 	}
+
+	@media screen and (max-width: 768px) {
+		.fv__header{
+			flex-direction: column;
+		}
+}
 
 	.fv__text-block span{
 		display: block;
@@ -282,6 +298,18 @@ headingText='お気軽にお問い合わせください！'
 		font-size: 12rem;
 		text-shadow: rgba(255,255,255,.8) 5px 5px 5px;
 	}
+
+	@media screen and (max-width: 768px) {
+		.fv__text-block span:first-of-type{
+			font-size: 1.8rem;
+		}
+		.fv__text-block span:last-of-type{
+			margin-top: 0;
+			font-family: "KTEGAKI", sans-serif;
+			font-size: 4rem;
+		}
+
+}
 
 
 	.fv__header::before{
@@ -298,6 +326,17 @@ headingText='お気軽にお問い合わせください！'
 		display: flex;
 		flex-direction: column;
 	}
+
+	@media screen and (max-width: 768px) {
+		.fv__copy{
+			font-size: 1.8rem;
+			line-height: 1.8;
+			display: flex;
+			flex-direction: column;
+		}
+
+}
+
 	.fv__copy li{
 		display: inline-block;
 		width: fit-content;
@@ -313,6 +352,16 @@ headingText='お気軽にお問い合わせください！'
 		justify-content: flex-start;
 		gap: 1rem;
 	}
+
+	@media screen and (max-width: 768px) {
+		.button-list{
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+}
+
+
 	.button-list li{
 		display: block;
 		width: 360px;
@@ -322,17 +371,50 @@ headingText='お気軽にお問い合わせください！'
 	.lineup__list{
 		margin-top: 60px;
 		display: flex;
-		align-items: center;
+		align-items: flex-start;
 		justify-content: space-between;
 		gap: 5%;
 	}
+
+	@media screen and (max-width: 768px) {
+		.lineup__list{
+			margin-top: 60px;
+			display: flex;
+			align-items: flex-center;
+			justify-content: space-between;
+			gap: 5%;
+			flex-direction: column;
+		}
+		.lineup__list li{
+			margin-top: 3rem;
+		}
+}
+
+.lineup__car-name{
+	margin-top: 1rem;
+	font-size: 2.2rem;
+	font-weight: bold;
+}
+
+.lineup__car-desc {
+	margin-top: 1rem;
+	font-size: 1.8rem;
+	line-height: 1.4;
+}
+
 
 .appeal{
 	font-size: 4.2rem;
 	text-align: center;
 }
 
-	h3{
+@media screen and (max-width: 768px) {
+	.appeal{
+		font-size: 2rem;
+	}
+}
+
+	 .flow__h3{
 		margin-top: 80px;
 		font-size: 4.2rem;
 		margin-bottom: 80px;
@@ -342,14 +424,34 @@ headingText='お気軽にお問い合わせください！'
 		text-align: center;
 	}
 
+	@media screen and (max-width: 768px) {
+		.flow__h3{
+			font-size: 3.2rem;
+			text-align: center;
+		}
+
+}
+
 	.flow__list{
 		display: flex;
 		justify-content: space-between;
 	}
+
+
 	.flow__list li{
 		width: 20%;
 		position: relative;
 	}
+	@media screen and (max-width: 768px) {
+		.flow__list{
+			flex-direction: column;
+		}
+		.flow__list li{
+			width: 100%;
+			margin-top: 6rem;
+		}
+
+}
 	.flow__list li figure{
 		width: 50%;
 		margin-top: 42px;
@@ -360,7 +462,10 @@ headingText='お気軽にお問い合わせください！'
 		font-size: 3.2rem;
 		text-align: center;
 	}
-	p{
+
+
+
+	.flow__list p{
 		margin-top: 24px;
 		line-height: 1.4;
 		padding: 0 10%;
@@ -385,6 +490,13 @@ headingText='お気軽にお問い合わせください！'
 		text-align: center;
 	}
 
+	@media screen and (max-width: 768px) {
+		.flow__tel p{
+			font-size: 2rem;
+		}
+
+}
+
 	.cta__lead {
 		width: 50%;
 		margin-right: auto;
@@ -393,6 +505,12 @@ headingText='お気軽にお問い合わせください！'
 		line-height: 1.4;
 	}
 
+	@media screen and (max-width: 768px) {
+		.cta__lead {
+		width: 100%;
+		font-size: 2rem;
+}
+	}
 	.button-list.cta{
 		justify-content: center;
 	}
@@ -404,6 +522,14 @@ headingText='お気軽にお問い合わせください！'
 		font-size: 3.2rem;
 		line-height: 1.4;
 	}
+	@media screen and (max-width: 768px) {
+		footer{
+			font-size: 2rem;
+			padding: 100px 5%;
+			text-align: justify;
+}
+}
+
 	footer figure{
 		width: 120px;
 		margin-right: auto;
