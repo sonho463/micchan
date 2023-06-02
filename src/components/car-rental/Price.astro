@@ -1,0 +1,46 @@
+---
+import Background from "../parts/Background.astro";
+import SectionLead from "../parts/SectionLead.astro";
+const headingText = "料金表";
+---
+
+<Background name="price" bgType="solidWhite" {headingText}>
+  <SectionLead>
+    みっちゃんレンタカーの基本の料金表です。<br />
+    １ヶ月単位の長期レンタルは格安でおすすめです！
+  </SectionLead>
+
+  <table>
+    <tr>
+      <th>車種</th>
+      <th>１日料金</th>
+      <th>１ヶ月料金</th>
+    </tr>
+    <tr>
+      <td>ワンボックス</td>
+      <td>10,000円（税込み）</td>
+      <td>100,000円（税込み）</td>
+    </tr>
+    <tr>
+      <td>軽自動車</td>
+      <td>3,000円（税込み）</td>
+      <td>35,000円（税込み）</td>
+    </tr>
+  </table>
+</Background>
+
+<style>
+table{
+	margin-top: 42px;
+	font-size: 24px;
+	margin-right: auto;
+	margin-left: auto;
+}
+table,th,tr,td{
+	border: 1px solid #111;
+	padding: 20px;
+}
+th{
+	background-color: var(--accent-pale-color);
+}
+</style>

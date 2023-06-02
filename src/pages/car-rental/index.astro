@@ -16,7 +16,7 @@ import micchan from "../../images/micchan.png"
 import Background from "../../components/parts/Background.astro";
 import SectionLead from "../../components/parts/SectionLead.astro";
 
-
+import Price from "../../components/car-rental/Price.astro";
 
 
 interface ImageObj {
@@ -45,8 +45,8 @@ const seo = {
       </h1>
       <ul class="fv__copy">
         <li>広々ワンボックス（７〜８人乗り） １日￥10,000（税込み）から</li>
-        <li>マンスリーレンタルがお得！　１ヶ月￥100,000（税込み）から</li>
-        <li>ゆいレール 赤嶺駅から 徒歩4分</li>
+        <li>マンスリーレンタルがお得！　軽自動車１ヶ月￥35,000（税込み）から</li>
+        <li>那覇空港近く ゆいレール 赤嶺駅から 徒歩4分</li>
       </ul>
 			<div class="button-list">
 					<Button
@@ -119,6 +119,9 @@ headingText='ラインナップ'
 			</ul>
 		</div>
 	</Background>
+
+	<Price />
+
 	<Background
 name="flow"
 bgType="solidWhite"
