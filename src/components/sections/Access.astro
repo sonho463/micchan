@@ -1,6 +1,7 @@
 ---
 import Background from "../parts/Background.astro";
 import Outview from "../../images/outview.jpg"
+import OutviewWebp from "../../images/outview.webp"
 const headingText = 'お店へのアクセス'
 
 ---
@@ -12,13 +13,16 @@ headingText = {headingText}
 
 <div class="access__inner">
 	<figure>
-		<img src={Outview} alt="">
+		<picture>
+			<source srcset={OutviewWebp} type="image/webp">
+		<img src={Outview} alt="お店の外観">
+		</picture>
 		<figcaption>
 			那覇空港から車で約５分
 		</figcaption>
 	</figure>
 	<div class="map">
-		<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14320.459935710669!2d127.6631481!3d26.1929376!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb1e0e2f553e9781d!2z44G_44Gj44Gh44KD44KT5byB5b2T!5e0!3m2!1sja!2sjp!4v1677388901397!5m2!1sja!2sjp" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3580.1149844365814!2d127.6609594150298!3d26.192937583442802!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34e569b4d199467d%3A0xb1e0e2f553e9781d!2z44G_44Gj44Gh44KD44KT5byB5b2T!5e0!3m2!1sja!2sjp!4v1678883537831!5m2!1sja!2sjp" title="みっちゃん弁当地図" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 	</div>
 
 </div>
@@ -46,4 +50,21 @@ headingText = {headingText}
 		width: 100%;
 		height: 100%;
 	}
+
+	@media screen and (max-width: 768px) {
+		.access__inner{
+			flex-direction: column;
+			align-items: center;
+		}
+		figure{
+			width: 100%;
+		}
+		.map{
+			margin-top: 20px;
+			width:100%;
+		}
+		iframe{
+			height: 400px;
+		}
+}
 </style>

@@ -1,19 +1,21 @@
 {
-  "name": "astro-minimal-starter",
+  "name": "micchan",
   "version": "v1.4.0",
   "private": false,
   "scripts": {
     "start": "astro dev",
     "build": "astro build",
+		"preview": "astro preview",
     "format": "npx prettier --write ."
   },
   "devDependencies": {
     "@astrojs/sitemap": "^1.0.0",
-    "astro": "^1.1.5",
+    "astro": "^1.9.2",
     "prettier-plugin-astro": "^0.0.12"
   },
   "dependencies": {
     "microcms-js-sdk": "^2.3.2",
+    "sharp": "^0.31.3",
     "swiper": "^9.0.5"
   }
 }

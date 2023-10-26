@@ -1,10 +1,14 @@
 ---
-import logoImage from '../images/header-logo.png'
+import logoImage from '/src/images/header-logo.png'
+import logoImageWebp from '/src/images/header-logo.webp'
 ---
 
 <h1>
 	<a href="/#">
-		<img src={logoImage} alt="仕出し・弁当・オードブル　みっちゃん" />
+		<picture>
+			<source srcset={logoImageWebp} type="image/webp" >
+			<img src={logoImage} alt="仕出し・弁当・オードブル　みっちゃん" />
+		</picture>
 	</a>
 </h1>
 

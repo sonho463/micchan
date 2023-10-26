@@ -1,9 +1,13 @@
 ---
-const {text} = Astro.props
+const {text} = Astro.props;
+let cn
+if(!text){
+	 cn = "section-heading noDisplay"
+}
 
 ---
 
-<div class="section-heading">
+<div class={cn}>
 	<h2>
 		<span>
 			{text}
@@ -16,6 +20,9 @@ const {text} = Astro.props
 .section-heading{
 	margin-top: 100px;
 	margin-bottom: 100px;
+}
+.noDisplay{
+	display: none;
 }
 h2{
 	width: fit-content;
@@ -34,7 +41,7 @@ h2::before{
 	position: absolute;
 	transform: translate(-50%,-10%);
 	display: block;
-	background-image: url(../../images/heading-mark--pink.svg);
+	background-image: url(../../images/heading-mark--pink.png);
 	background-size: contain;
 	width: 80px;
 	height: 60px;

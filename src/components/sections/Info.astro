@@ -1,4 +1,5 @@
 ---
+import Button from "../Button.astro";
 import InfoArticle from "../InfoArticle.astro";
 import Background from "../parts/Background.astro";
 import SectionHeading from "../parts/SectionHeading.astro";
@@ -14,6 +15,23 @@ headingText = {headingText}
 
 <InfoArticle />
 
+<div class="buttonWrapper">
+	<Button
+		text="お知らせ一覧"
+		path="info/1"
+		cls="forInfoListing"
+	/>
 
+</div>
 
 </Background>
+
+<style>
+	
+	.buttonWrapper{
+		margin-top: 42px;
+		display: flex;
+		justify-content: center;
+	}
+
+	</style>

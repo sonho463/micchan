@@ -26,6 +26,13 @@ h1{
 	margin-right: auto;
 	margin-left: auto;
 }
+
+@media screen and (max-width: 768px) {
+	.center{
+		margin-top: 60px;
+	}
+}
+
 span{
 	font-size: 4.2rem;
 	font-family: var(--font-design-main);
@@ -37,7 +44,7 @@ h1::before{
 	position: absolute;
 	transform: translate(-50%,-10%);
 	display: block;
-	background-image: url(../../images/heading-mark--pink.svg);
+	background-image: url(../../images/heading-mark--pink.png);
 	background-size: contain;
 	width: 80px;
 	height: 60px;
@@ -48,8 +55,11 @@ h1::before{
 		margin-top: 0px;
 		margin-bottom: 48px;
 	}
-	h2::before{
-		transform: translate(-30%,-10%);
+	span{
+		font-size: 2.8rem;
+	}
+	h1::before{
+		transform: translate(-50%,-20%);
 	}
 }
 </style>

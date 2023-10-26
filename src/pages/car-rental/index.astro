@@ -1,0 +1,552 @@
+---
+import Base from "../../layouts/Base.astro";
+
+import type { Props as BaseHeadProps } from "../../components/BaseHead.astro";
+import Button from "../../components/Button.astro";
+
+import estima from "../../images/car-rental/estima.jpg"
+import serena from "../../images/car-rental/serena.jpg"
+import stepwagon from "../../images/car-rental/stepwagon.jpg"
+import form from "../../images/car-rental/form.svg"
+import recieve from "../../images/car-rental/recieve.svg"
+import submit from "../../images/car-rental/submit.svg"
+import done from "../../images/car-rental/done.svg"
+import micchan from "../../images/micchan.png"
+
+import Background from "../../components/parts/Background.astro";
+import SectionLead from "../../components/parts/SectionLead.astro";
+
+import Price from "../../components/car-rental/Price.astro";
+
+
+interface ImageObj {
+	src: string
+}
+
+export interface Props {
+  seo?: BaseHeadProps;
+}
+
+const seo = {
+  title:
+    "みっちゃんレンタカー｜格安・ワンボックス・観光やビジネスでの長期利用にもオススメ",
+  caronicalURL: "https://micchan-bentou.com",
+};
+---
+
+<Base {seo}>
+  <section class="fv">
+    <div class="inner">
+      <h1 class="fv__header">
+				<div class="fv__text-block">
+					<span>格安・短期でも長期でもOK・ビジネス・旅行・観光におすすめ</span>
+					<span>みっちゃんレンタカー</span>
+				</div>
+      </h1>
+      <ul class="fv__copy">
+        <li>広々ワンボックス（７〜８人乗り） １日￥10,000（税込み）から</li>
+        <li>マンスリーレンタルがお得！　軽自動車１ヶ月￥35,000（税込み）から</li>
+        <li>那覇空港近く ゆいレール 赤嶺駅から 徒歩4分</li>
+      </ul>
+			<div class="button-list">
+					<Button
+						text='フォームから予約する'
+						cls="forContactForm"
+						path='https://forms.gle/mq96vvr7MZ1HFBWH7'
+					 />
+
+					<Button
+						text='電話予約する'
+						cls="forTel"
+						path='tel:090-1879-2872'
+					/>
+
+			</div>
+    </div>
+  </section>
+	<p class="appeal">
+		古い車両になりますが、<br>
+		レンタカー料金が高騰する中、<br>
+		安い価格で提供できるレンタカー会社です
+	</p>
+	<Background
+name="lineup"
+bgType="solidWhite"
+headingText='ラインナップ'
+>
+<div class="inner">
+			<ul class="lineup__list">
+				<li>
+					<figure>
+						<img src={estima} alt="" />
+					</figure>
+					<p class="lineup__car-name">
+						エスティマ
+					</p>
+					<p class="lineup__car-desc">
+						カーナビ<br>
+			子供用シート貸出￥３，０００<br>
+			フルカバーの保険付き<br>
+			ペット乗車可能
+					</p>
+				</li>
+				<li>
+					<figure>
+						<img src={serena} alt="" />
+					</figure>
+					<p class="lineup__car-name">
+						セレナ
+					</p>
+					<p class="lineup__car-desc">
+						カーナビ<br>
+			子供用シート貸出￥３，０００<br>
+			フルカバーの保険付き
+					</p>
+				</li>
+				<li>
+					<figure>
+						<img src={stepwagon} alt="" />
+					</figure>
+					<p class="lineup__car-name">
+						ステップワゴン
+					</p>
+					<p class="lineup__car-desc">
+						カーナビ<br>
+			子供用シート貸出￥３，０００<br>
+			フルカバーの保険付き
+					</p>
+				</li>
+			</ul>
+		</div>
+	</Background>
+
+	<Price />
+
+	<Background
+name="flow"
+bgType="solidWhite"
+headingText='ご利用までの流れ'
+>
+		<div class="inner">
+			<div class="flow__form">
+			<h3 class="flow__h3">フォームでのご予約</h3>
+			<ul class="flow__list">
+				<li>
+					<h4>
+						1.フォームを送信
+					</h4>
+					<figure>
+						<img src={form} alt="">
+					</figure>
+					<p>
+						<a href="https://forms.gle/mq96vvr7MZ1HFBWH7">
+							こちら
+						</a>
+						をクリックするか、ページ内のボタンから、フォーム画面へお越しください。必要事項をご記入の上、送信をお願いします。
+					</p>
+
+
+				</li>
+				<li>
+					<h4>
+						2.メールを受信
+					</h4>
+					<figure>
+						<img src={recieve} alt="">
+					</figure>
+					<p>
+						24h以内にメールにて、お車の空き状況、お見積り金額を送信いたします。内容をご確認ください。
+					</p>
+
+				</li>
+				<li>
+					<h4>
+						3.ご返信
+					</h4>
+					<figure>
+						<img src={submit} alt="">
+					</figure>
+						<p>
+							メールの内容で良ければ、そのメールにご返信をお願いします。
+						</p>
+
+				</li>
+				<li>
+					<h4>
+						4.予約完了
+					</h4>
+					<figure>
+						<img src={done} alt="">
+					</figure>
+					<p>
+						ご返信いただいたら、予約完了となります。ご予約当日、ご指定のお時間にご来店ください。
+					</p>
+				</li>
+			</ul>
+			<div class="flow__button">
+				<Button
+							text='フォームから予約する'
+							cls="forContactForm"
+							path='https://forms.gle/mq96vvr7MZ1HFBWH7'
+						 />
+			</div>
+			</div>
+			<div class="flow__tel">
+				<h3 class="flow__h3">お電話でのご予約</h3>
+				<p>
+					<a href="tel:090-1879-2872">090-1879-2872</a>
+					までご連絡ください。
+				</p>
+				<p>
+					受付対応時間 8:00~20:00
+				</p>
+				<p>
+					上記時間帯以外はフォームのご利用をお願いします。
+				</p>
+				<div class="flow__button">
+					<Button
+								text='電話で予約する'
+								cls="forTel"
+								path='tel:090-1875-3314'
+							/>
+				</div>
+			</div>
+		</div>
+	</Background>
+	<Background
+name="cta"
+bgType="solidWhite"
+headingText='お気軽にお電話を！'
+>
+
+		<div class="inner">
+			<h2 class="cta__lead">
+				詳しくお聞きになりたいことや不安なことなどございましたら、<br>
+				お気軽にお問い合わせください！
+			</h2>
+			<ul class="button-list cta">
+
+					<Button
+						text='電話で問い合わせる'
+						cls="forTel"
+						path='tel:090-1879-2872'
+					/>
+		</div>
+
+		</div>
+	</Background>
+  <footer>
+		<div class="footer-inner">
+			<div class="footer-logo">
+				<figure>
+					<img src={micchan} alt="">
+				</figure>
+				<div class="footer-logo-text">
+					<span>
+						〒901-0153<br />
+						沖縄県那覇市宇栄原１丁目１６−１０<br />
+						TEL　090-1879-2872
+					</span>
+				</div>
+			</div>
+			<p class="footer-copyright">© 2023 みっちゃんレンタカー</p>
+		</div>
+	</footer>
+</Base>
+
+<style>
+
+	.inner{
+		width: 90%;
+		margin-right: auto;
+		margin-left: auto;
+	}
+
+	.fv{
+		position: relative;
+		background-image: url("../../images/car-rental/fv-bg.jpg");
+		background-size: cover;
+		height: 700px;
+}
+
+@media screen and (max-width: 768px){
+	.fv{
+		background-size: 100%;
+		background-repeat: no-repeat;
+	}
+}
+
+
+	.fv__header{
+		margin-top: -32px;
+		display: flex;
+		align-items: center;
+	}
+
+	@media screen and (max-width: 768px) {
+		.fv__header{
+			flex-direction: column;
+		}
+}
+
+	.fv__text-block span{
+		display: block;
+	}
+	.fv__text-block span:first-of-type{
+		font-size: 2.4rem;
+	}
+	.fv__text-block span:last-of-type{
+		margin-top: -2rem;
+		font-family: "KTEGAKI", sans-serif;
+		font-size: 12rem;
+		text-shadow: rgba(255,255,255,.8) 5px 5px 5px;
+	}
+
+	@media screen and (max-width: 768px) {
+		.fv__text-block{
+				background-color: #fff;
+			padding: 12px;
+		}
+		.fv__text-block span:first-of-type{
+			font-size: 1.8rem;
+		}
+		.fv__text-block span:last-of-type{
+			margin-top: 0;
+			font-family: "KTEGAKI", sans-serif;
+			font-size: 4rem;
+		}
+
+}
+
+
+	.fv__header::before{
+		content: '';
+		background-image: url('../../images/micchan.png');
+		background-size: cover;
+		display: block;
+		width: 140px;
+		height: 200px;
+	}
+	.fv__copy{
+		font-size: 3.2rem;
+		line-height: 1.8;
+		display: flex;
+		flex-direction: column;
+	}
+
+	@media screen and (max-width: 768px) {
+		.fv__copy{
+			font-size: 1.8rem;
+			line-height: 1.8;
+			display: flex;
+			flex-direction: column;
+		}
+
+}
+
+	.fv__copy li{
+		display: inline-block;
+		width: fit-content;
+		background-color: #fff;
+		margin-top: 1rem;
+		padding: 0 1rem;
+	}
+
+	.button-list{
+		margin-top: 42px;
+		width: 100%;
+		display: flex;
+		justify-content: flex-start;
+		gap: 1rem;
+	}
+
+	@media screen and (max-width: 768px) {
+		.button-list{
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+}
+
+
+	.button-list li{
+		display: block;
+		width: 360px;
+	}
+
+
+	.lineup__list{
+		margin-top: 60px;
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		gap: 5%;
+	}
+
+	@media screen and (max-width: 768px) {
+		.lineup__list{
+			margin-top: 60px;
+			display: flex;
+			align-items: flex-center;
+			justify-content: space-between;
+			gap: 5%;
+			flex-direction: column;
+		}
+		.lineup__list li{
+			margin-top: 3rem;
+		}
+}
+
+.lineup__car-name{
+	margin-top: 1rem;
+	font-size: 2.2rem;
+	font-weight: bold;
+}
+
+.lineup__car-desc {
+	margin-top: 1rem;
+	font-size: 1.8rem;
+	line-height: 1.4;
+}
+
+
+.appeal{
+	margin-top: 42px;
+	font-size: 4.2rem;
+	text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+	.appeal{
+		margin-top: 4rem;
+		font-size: 2rem;
+	}
+}
+
+	 .flow__h3{
+		margin-top: 80px;
+		font-size: 4.2rem;
+		margin-bottom: 80px;
+		text-decoration: underline;
+		text-decoration-color:var(--accent-color);
+		text-underline-offset: 12px;
+		text-align: center;
+	}
+
+	@media screen and (max-width: 768px) {
+		.flow__h3{
+			font-size: 3.2rem;
+			text-align: center;
+		}
+
+}
+
+	.flow__list{
+		display: flex;
+		justify-content: space-between;
+	}
+
+
+	.flow__list li{
+		width: 20%;
+		position: relative;
+	}
+	@media screen and (max-width: 768px) {
+		.flow__list{
+			flex-direction: column;
+		}
+		.flow__list li{
+			width: 100%;
+			margin-top: 6rem;
+		}
+
+}
+	.flow__list li figure{
+		width: 50%;
+		margin-top: 42px;
+		margin-right: auto;
+		margin-left: auto;
+	}
+	.flow__list h4{
+		font-size: 3.2rem;
+		text-align: center;
+	}
+
+
+
+	.flow__list p{
+		margin-top: 24px;
+		line-height: 1.4;
+		padding: 0 10%;
+		font-size: 2rem;
+		text-align: justify;
+	}
+	.flow__list li + li::before{
+		content: '→';
+		font-size: 6rem;
+		position: absolute;
+		top: 50%;
+		transform: translateX(-130%);
+	}
+	.flow__button{
+		margin-top: 100px;
+		display: flex;
+		justify-content: center;
+	}
+
+	.flow__tel p{
+		font-size: 3.6rem;
+		text-align: center;
+	}
+
+	@media screen and (max-width: 768px) {
+		.flow__tel p{
+			font-size: 2rem;
+		}
+
+}
+
+	.cta__lead {
+		margin-top: 42px;
+		width: 50%;
+		margin-right: auto;
+		margin-left: auto;
+		font-size: 3.2rem;
+		line-height: 1.4;
+	}
+
+	@media screen and (max-width: 768px) {
+		.cta__lead {
+		width: 100%;
+		font-size: 2rem;
+}
+	}
+	.button-list.cta{
+		justify-content: center;
+	}
+
+	footer{
+		background-color: var(--base-color);
+		padding: 100px 20%;
+		text-align: center;
+		font-size: 3.2rem;
+		line-height: 1.4;
+	}
+	@media screen and (max-width: 768px) {
+		footer{
+			font-size: 2rem;
+			padding: 100px 5%;
+			text-align: justify;
+}
+}
+
+	footer figure{
+		width: 120px;
+		margin-right: auto;
+		margin-left: auto;
+	}
+	.footer-copyright{
+		text-align: center;
+	}
+
+</style>

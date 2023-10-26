@@ -2,12 +2,13 @@
 import Background from "../parts/Background.astro";
 import SectionHeading02 from "../parts/SectionHeading02.astro";
 import SectionLead from "../parts/SectionLead.astro";
-const headingText = "メニューのご紹介";
-import bannerFolded from "../../images/menu/banner-folded.png";
+import bannerFolded from "../../images/menu/banner-folded.jpg";
+import bannerFoldedWebp from "../../images/menu/banner-folded.webp";
 import bannerMeeting from "../../images/menu/banner-meeting.png";
+import bannerMeetingWebp from "../../images/menu/banner-meeting.webp";
 import MenuUsual from "../MenuUsual.astro";
-import Button from "../Button.astro";
 import ButtonWrapper from "../ButtonWrapper.astro";
+const headingText = "メニューのご紹介";
 ---
 
 <Background
@@ -18,8 +19,8 @@ headingText={headingText}
   <SectionLead>
     <p>
       みっちゃんのメニューをご紹介します<br>
-			おばーたちが作る<br>
-			昔ながらの沖縄定番料理を<br>
+			おばーたちが作る<br class="u-active-tbpc">
+			昔ながらの沖縄定番料理を<br class="u-active-tbpc">
 			ぜひ、ご賞味ください
     </p>
   </SectionLead>
@@ -35,12 +36,18 @@ headingText={headingText}
     <ul class="menu-folded">
       <li>
         <figure>
-          <img src={bannerFolded} alt="折り詰めやオードブル" />
+					<picture>
+						<source srcset={bannerFoldedWebp} type="image/webp">
+						<img src={bannerFolded} alt="折り詰めやオードブル" />
+					</picture>
         </figure>
       </li>
       <li>
         <figure>
-          <img src={bannerMeeting} alt="" />
+					<picture>
+						<source srcset={bannerMeetingWebp} type="image/webp">
+						<img src={bannerMeeting} alt="" />
+					</picture>
         </figure>
       </li>
     </ul>
@@ -48,10 +55,9 @@ headingText={headingText}
 
 		<SectionHeading02 headingText="いつものお弁当" />
 		<p class="lead">
-      定番お弁当メニュー。次のもの以外はすべて５００円です。<br>
-			・特注弁当---９００円 <br>
-			・観光におすすめの弁当---８００円〜（ご相談ください） <br>
-			・中味汁---８００円<br>
+      定番お弁当メニュー。次のもの以外はすべて500円です。<br>
+			・特注弁当---800円〜 <br>
+			・中味汁---800円<br>
     </p>
 		<MenuUsual />
 		<ButtonWrapper className="buttonContainerSection" />
@@ -93,5 +99,16 @@ headingText={headingText}
 		}
 								}
 
+								.u-active-tbpc{
+	display: inline;
+}
+@media screen and (max-width: 480px) {
+	.u-active-tbpc{
+		display: none;
+	}
+	p{
+		text-align: justify;
+	}
+}
 
 </style>

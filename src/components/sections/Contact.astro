@@ -1,4 +1,5 @@
 ---
+import Button from "../Button.astro";
 import Background from "../parts/Background.astro";
 const headingText = 'お問い合わせ'
 ---
@@ -8,26 +9,32 @@ bgType="solidWhite"
 headingText = {headingText}
 >
 
-<form action="https://ssgform.com/s/KvYQQu800pR9" method="post">
+<form action="https://ssgform.com/s/HvOwk57yuFMz" method="post">
   <div style="display: none;">
     <input type="text" name="wana" />
   </div><!-- name="wana"を見えない状態で設置 -->
 	<div class="form-block">
 		<div class="item-wrapper">
 			<label for="name">
-				お名前
+				お名前（必須）
 			</label>
 			<input id="name" type="text" name="お名前" required="required" />
 		</div>
 		<div class="item-wrapper">
 			<label for="email">
-				メールアドレス
+				メールアドレス（必須）
 			</label>
 			<input id="email" type="email" name="メールアドレス" required="required" />
 		</div>
+		<div class="item-wrapper">
+			<label for="tel">
+				電話番号（必須）
+			</label>
+			<input id="tel" type="tel" name="電話番号" required="required" />
+		</div>
 		<div class="item-wrapper --textarea">
 			<label for="content">
-				お問い合わせ内容
+				お問い合わせ内容（必須）
 			</label>
 			<textarea id="content" name="お問い合わせ内容" required="required" rows="5"></textarea>
 		</div>
@@ -86,6 +93,8 @@ headingText = {headingText}
 	button:hover{
 		opacity: .6;
 	}
+
+
 
 	@media screen and (max-width: 768px) {
 		.item-wrapper{

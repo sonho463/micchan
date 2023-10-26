@@ -30,6 +30,7 @@ const image = new URL(Astro.props.image || "./social.png", Astro.site);
 <meta name="description" content={description || settings.description} />
 <link rel="stylesheet" href="/assets/styles/destyle.css" />
 <link rel="stylesheet" href="/assets/styles/global.css" />
+<link rel="sitemap" href="/sitemap-index.xml">
 <!-- settingsmap -->
 <link rel="settingsmap" href="/settingsmap.xml" />
 <!-- RSS -->
@@ -59,7 +60,7 @@ const image = new URL(Astro.props.image || "./social.png", Astro.site);
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
+<!-- <link
   rel="preload"
   href="https://fonts.googleapis.com/icon?family=Material+Icons"
   as="style"
@@ -84,7 +85,7 @@ const image = new URL(Astro.props.image || "./social.png", Astro.site);
     rel="stylesheet"
     type="text/css"
   />
-</noscript>
+</noscript> -->
 <!-- ファビコン -->
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/icon.svg" type="image/svg+xml">

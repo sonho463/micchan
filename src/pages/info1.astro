@@ -1,0 +1,148 @@
+---
+import Layout from "../layouts/Page.astro";
+import Container from "../components/Container.astro";
+import HeadingH1 from "../components/parts/HeadingH1.astro";
+import { getBlogs } from "../library/microcms";
+
+const response = await getBlogs({ fields: ["id", "title","content","image"],limit: 1000 });
+
+---
+
+<Layout>
+	<Container>
+		<HeadingH1
+		text="お知らせ一覧"
+		align="center" />
+
+		<ul>
+			{response.contents.map((info)=>{
+				const contentText = info.content.replace(/(<([^>]+)>)/gi, '');
+				return (
+				<li>
+					<a href={info.id}>
+						<figure>
+							<img src={info.image.url} alt="">
+						</figure>
+						<div class="text-block">
+							<h2>
+								<span>
+									{info.title}
+								</span>
+							</h2>
+							<p>
+								{contentText}
+								</p>
+						</div>
+						</a>
+				</li>
+			)
+		})}
+
+		</ul>
+	</Container>
+</Layout>
+
+<style>
+	body {
+		background-color: var(--base-color);
+	}
+	ul{
+		padding-bottom: 60px;
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		align-items: stretch;
+		row-gap: 32px;
+	}
+
+	ul::after{
+		content: '';
+		width: 30%;
+
+	}
+	li{
+		width: 30%;
+		background-color: #fff;
+		box-shadow: rgba(0,0,0,.2) 2px 2px 2px;
+		border-radius: 12px 12px 0 0;
+}
+
+
+
+
+a {
+	width: 100%;
+}
+
+.text-block{
+	padding: 12px 4%;
+}
+
+h2{
+	width: fit-content;
+	margin-right: auto;
+	position: relative;
+}
+p{
+	height: 88px;
+	line-height: 1.8;
+	margin-top: 36px;
+	padding-right: 24px;
+	font-size: 16px;
+	/* 三点リーダー対応 */
+	display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+
+  overflow: hidden;
+}
+span{
+	font-size: 2.0rem;
+	font-family: var(--font-design-main);
+	position: relative;
+	z-index: 2
+}
+
+figure{
+	width: 100%;
+	height: 150px;
+	overflow: hidden;
+	border-radius: 12px 12px 0 0;
+
+}
+img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center center;
+}
+
+@media screen and (max-width: 768px) {
+	ul{
+		flex-direction: column;
+	}
+	li{
+		width: 100%;
+	}
+ a{
+	flex-direction: column-reverse;
+ }
+ figure{
+	width: 100%;
+ }
+ .text-block{
+	margin-top: 12px;
+	padding-bottom: 32px;
+	width: 100%;
+ }
+ p{
+	padding-right: 0;
+	margin-top: 8px;
+	font-size: 1.8rem;
+	line-height: 1.4;
+	height: 72px;
+ }
+}
+	</style>
+
+	<script src="../scripts/top.js"></script>

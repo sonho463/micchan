@@ -1,21 +1,28 @@
 ---
 import menuUsual from "../data/menuUsual";
 import ButtonWrapper from "./ButtonWrapper.astro";
+// import { Image,Picture } from "@astrojs/image/components";
+
+
 
 // menuUsual.forEach((el)=>{
 // 	console.log(el)
 // })
 
 ---
+<!-- <img src={`assets/menuUsual/${item.path}.png`} alt="" /> -->
 
-
+<!-- <Picture src={`assets/menuUsual/${item.path}.png`} widths={[200, 400, 800]} aspectRatio="4:3" sizes="(max-width: 800px) 20vw, 300px"/> -->
 
 <ul class="menu-usual">
 	{
 		menuUsual.map((item)=>(
-		<li>
-			<figure>
-				<img src={`assets/menuUsual/${item.path}.png`} alt="" />
+			<li>
+				<figure>
+					<picture>
+						<source srcset={`/assets/menuUsual/${item.path}.webp`} type="image/webp"/>
+						<img src={`/assets/menuUsual/${item.path}.jpg`} alt="menu" loading="lazy"/>
+						</picture>
 				<figcaption>{item.name}</figcaption>
 			</figure>
 		</li>
@@ -23,8 +30,12 @@ import ButtonWrapper from "./ButtonWrapper.astro";
 	}
 </ul>
 
-
 <style>
+	img{
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
 ul{
 	display: flex;
 	flex-wrap: wrap;

@@ -11,22 +11,23 @@ import Contact from "../components/sections/Contact.astro";
 
 import { getBlogs } from "../library/microcms";
 import Loading from "../components/Loading.astro";
+import Recruit from "../components/sections/Recruit.astro";
 
 const seo = {
-  title: "HOME｜みっちゃん",
-  description:
-    "沖縄県那覇市宇栄原で50年営業している仕出し、弁当、オードブルのお店です。",
+  title: "HOME｜仕出し・弁当・オードブル　みっちゃん弁当",
+	caronicalURL: "https://micchan-bentou.com"
 };
 ---
 
 <Layout {seo}>
-	<div id="loader">
-		<Loading />
-	</div>
+  <div id="loader">
+    <Loading />
+  </div>
   <Container>
     <FV />
-    <Intro />
     <About />
+    <Intro />
+		<!-- <Recruit/> -->
     <Menu />
     <Info />
     <Access />
@@ -34,16 +35,20 @@ const seo = {
   </Container>
 </Layout>
 
-<style>
-	.loaded{
-		display: none;
-	}
-</style>
-
 <script src="../scripts/top.js"></script>
 <script>
-window.onload = ()=>{
-    const loader = document.getElementById('loader');
-    loader.classList.add('loaded');
-}
+  window.onload = () => {
+    const loader = document.getElementById("loader");
+    loader.classList.add("loaded");
+  };
 </script>
+
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .loaded {
+    display: none;
+  }
+</style>

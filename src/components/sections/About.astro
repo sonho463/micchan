@@ -4,35 +4,59 @@ import SectionLead from "../parts/SectionLead.astro";
 const headingText = "みっちゃんについて";
 ---
 
-<Background name="about" bgType="solidCream" headingText={headingText}>
+<Background name="about" bgType="solidWhite" {headingText}>
   <SectionLead>
     <p>
-      創業者のみっちゃんは、<br>
-			地元では けっこう有名人です。<br>
-			 ファミリーマート沖縄<br>
-      SPAMのCM<br>
-			明石家さんまさんのTV番組<br>
-			などに出演したことがあります。
+      創業者のみっちゃんは、<br class="u-active-tbpc" />
+      地元では けっこう有名人です。<br />
+      ファミリーマート沖縄<span class="u-active-sp">・</span>
+      <br class="u-active-tbpc" />TULIPポークランチョンミートのCM
+      <span class="u-active-sp">・</span>
+      <br class="u-active-tbpc" />明石家さんまさんのTV番組<br
+        class="u-active-tbpc"
+      />
+      などに出演したことがあります。
     </p>
   </SectionLead>
-	<ul class="movie-list">
+  <ul class="movie-list">
+    <li class="movie-item">
+      <figure class="movie">
+        <iframe
+          src="https://www.youtube.com/embed/iS8QApqILF8"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+        <figcaption>
+          沖縄ファミマ フラチキ先輩「フラチキパック注文」篇(15秒)
+        </figcaption>
+      </figure>
+    </li>
+    <li class="movie-item">
+      <figure class="movie">
+        <iframe
+          src="https://www.youtube.com/embed/Zd0w2plXtA0"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+        <figcaption>TULIPポークランチョンミートTVCM 2017年4月28日</figcaption>
+      </figure>
+    </li>
 		<li class="movie-item">
-			<figure class="movie">
-				<iframe src="https://www.youtube.com/embed/iS8QApqILF8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-				<figcaption>
-					沖縄ファミマ フラチキ先輩「フラチキパック注文」篇(15秒)
-				</figcaption>
-			</figure>
-		</li>
-		<li class="movie-item">
-			<figure class="movie">
-				<iframe src="https://www.youtube.com/embed/Zd0w2plXtA0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-				<figcaption>
-					TULIPポークランチョンミートTVCM 2017年4月28日
-				</figcaption>
-			</figure>
-		</li>
-		<!-- <li class="movie-item">
+      <figure class="movie">
+        <iframe
+          width="873"
+          height="491"
+          src="https://www.youtube.com/embed/_7naiqQenFY"
+          title="みっちゃんラジオｃｍ"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+        <figcaption>みっちゃんラジオCM（画像付き）</figcaption>
+      </figure>
+    </li>
+    <!-- <li class="movie-item">
 			<figure class="movie">
 				<iframe src="https://www.youtube.com/embed/iS8QApqILF8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 				<figcaption>
@@ -40,35 +64,52 @@ const headingText = "みっちゃんについて";
 				</figcaption>
 			</figure>
 		</li> -->
-
-	</ul>
+  </ul>
 </Background>
 
 <style>
+  ul {
+    margin-top: 40px;
+    display: flex;
+    gap: 5%;
+  }
+  li {
+    flex: 1;
+  }
+  figcaption {
+    margin-top: 16px;
+    font-size: 2rem;
+  }
+  iframe {
+    width: 100%;
+    height: 300px;
+  }
 
-	ul{
-		margin-top: 40px;
-		display: flex;
-		gap: 5%;
-	}
-  li{
-		flex: 1;
-	}
-	figcaption{
-		margin-top: 16px;
-		font-size: 2.0rem;
-	}
-	iframe{
-		width: 100%;
-		height: 300px;
-	}
-
-	@media screen and (max-width: 768px) {
-		ul{
-			flex-direction: column;
-		}
-		li + li{
-			margin-top: 60px;
-		}
-								}
+  @media screen and (max-width: 768px) {
+    ul {
+      flex-direction: column;
+    }
+    li + li {
+      margin-top: 60px;
+    }
+  }
+  .u-active-tbpc {
+    display: inline;
+  }
+  @media screen and (max-width: 480px) {
+    .u-active-tbpc {
+      display: none;
+    }
+    p {
+      text-align: justify;
+    }
+  }
+  .active-sp {
+    display: none;
+  }
+  @media screen and (max-width: 480px) {
+    .active-sp {
+      display: inline;
+    }
+  }
 </style>
